@@ -1,10 +1,10 @@
 {
-  "lastSyncedBlock": 420000399,
-  "lastSyncTimestamp": 1768242214196,
-  "lastBlockTimestamp": 1768076508,
-  "totalVotingPower": "696869696969696969696969",
-  "totalDelegators": 17,
-  "totalTimelineEntries": 174,
+  "lastSyncedBlock": 420671608,
+  "lastSyncTimestamp": 1768244486734,
+  "lastBlockTimestamp": 1768244461,
+  "totalVotingPower": "696969696969696969696969",
+  "totalDelegators": 18,
+  "totalTimelineEntries": 180,
   "timelinePartitions": 1,
   "delegateAddress": "0xe594469fde6ae29943a64f81d95c20f5f8eb2e04"
 }

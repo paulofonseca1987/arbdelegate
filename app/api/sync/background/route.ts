@@ -217,6 +217,19 @@ export async function POST(request: NextRequest) {
         currentDelegatorAddrs
       );
 
+      // Identify NEW delegators discovered in this chunk's delegation events
+      // These are addresses that delegated to us but weren't in currentDelegatorAddrs
+      const newDelegatorsInChunk: string[] = [];
+      const delegateAddrLower = delegateAddress.toLowerCase();
+      for (const event of delegationEvents) {
+        if (event.eventType === 'DELEGATE_CHANGED' && event.to.toLowerCase() === delegateAddrLower) {
+          const delegatorAddr = event.from.toLowerCase();
+          if (!currentDelegatorAddrs.includes(delegatorAddr) && !newDelegatorsInChunk.includes(delegatorAddr)) {
+            newDelegatorsInChunk.push(delegatorAddr);
+          }
+        }
+      }
+
       // Fetch Transfer events for current delegators to track all balance changes
       const transferEvents = await fetchTransferEvents(
         eventClient,
@@ -227,6 +240,22 @@ export async function POST(request: NextRequest) {
         currentFrom,
         currentTo
       );
+
+      // Also fetch Transfer events for NEW delegators discovered in this chunk
+      // This handles the case where someone delegates and then transfers in the same chunk
+      if (newDelegatorsInChunk.length > 0) {
+        console.log(`[Background Sync] Found ${newDelegatorsInChunk.length} new delegators in chunk, fetching their transfer events...`);
+        const newDelegatorTransferEvents = await fetchTransferEvents(
+          eventClient,
+          archiveClient,
+          tokenAddress,
+          delegateAddress,
+          newDelegatorsInChunk,
+          currentFrom,
+          currentTo
+        );
+        transferEvents.push(...newDelegatorTransferEvents);
+      }
 
       // Merge and deduplicate events (delegation events take priority)
       const events = [...delegationEvents, ...transferEvents].sort((a, b) => {
