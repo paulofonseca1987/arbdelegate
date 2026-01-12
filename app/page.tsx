@@ -329,8 +329,8 @@ export default function Home() {
               </p>
               {delegateAddress && (
                 <div className="flex items-center gap-2 text-sm text-blue-200">
-                  <span className="font-mono bg-white/10 px-3 py-1 rounded-full">
-                    {delegateAddress.slice(0, 6)}...{delegateAddress.slice(-4)}
+                  <span className="font-mono bg-white/10 px-3 py-1 rounded-full break-all">
+                    {delegateAddress}
                   </span>
                   <span className="text-blue-300">•</span>
                   <span>Arbitrum DAO Delegate</span>

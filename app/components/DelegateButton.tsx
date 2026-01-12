@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useAccount, useWriteContract, useWaitForTransactionReceipt, useReadContract, useSwitchChain } from 'wagmi';
 import { useConnectModal } from '@rainbow-me/rainbowkit';
-import { parseAbi, formatUnits } from 'viem';
+import { parseAbi, formatUnits, parseGwei } from 'viem';
 import { arbitrum } from 'wagmi/chains';
 
 // ERC20Votes ABI - only the functions we need
@@ -123,6 +123,9 @@ export default function DelegateButton({ delegateAddress, tokenAddress }: Delega
         functionName: 'delegate',
         args: [delegateAddress as `0x${string}`],
         chainId: arbitrum.id,
+        // Set higher gas fees to avoid "max fee per gas less than block base fee" errors
+        maxFeePerGas: parseGwei('0.1'),
+        maxPriorityFeePerGas: parseGwei('0.01'),
       });
     } catch (err) {
       console.error('Delegation error:', err);
