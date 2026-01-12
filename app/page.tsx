@@ -512,7 +512,8 @@ export default function Home() {
                 </div>
               ) : timeline.length > 0 ? (
                 <>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 text-right">
+                  <TimelineChart timeline={timeline} votes={votes} lastSyncTimestamp={(metadata.lastBlockTimestamp || metadata.lastSyncTimestamp / 1000) * 1000} />
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-left">
                     All data as of{" "}
                     {formatBlockTimestamp(metadata.lastBlockTimestamp || metadata.lastSyncTimestamp / 1000)}{" "}
                     on Arbitrum block{" "}
@@ -525,7 +526,6 @@ export default function Home() {
                       {metadata.lastSyncedBlock.toLocaleString()}
                     </a>
                   </p>
-                  <TimelineChart timeline={timeline} votes={votes} lastSyncTimestamp={(metadata.lastBlockTimestamp || metadata.lastSyncTimestamp / 1000) * 1000} />
                 </>
               ) : (
                 <p className="text-gray-500 dark:text-gray-400">
