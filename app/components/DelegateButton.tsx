@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useAccount, useWriteContract, useWaitForTransactionReceipt, useReadContract } from 'wagmi';
+import { useAccount, useWriteContract, useWaitForTransactionReceipt, useReadContract, useSwitchChain } from 'wagmi';
 import { useConnectModal } from '@rainbow-me/rainbowkit';
 import { parseAbi, formatUnits } from 'viem';
+import { arbitrum } from 'wagmi/chains';
 
 // ERC20Votes ABI - only the functions we need
 const erc20VotesAbi = parseAbi([
@@ -19,10 +20,14 @@ interface DelegateButtonProps {
 }
 
 export default function DelegateButton({ delegateAddress, tokenAddress }: DelegateButtonProps) {
-  const { address, isConnected } = useAccount();
+  const { address, isConnected, chainId } = useAccount();
   const { openConnectModal } = useConnectModal();
+  const { switchChain } = useSwitchChain();
   const [delegationStatus, setDelegationStatus] = useState<'idle' | 'delegating' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  // Check if user is on the correct chain (Arbitrum)
+  const isOnArbitrum = chainId === arbitrum.id;
 
   // Check current delegate
   const { data: currentDelegate, refetch: refetchDelegate } = useReadContract({
@@ -30,6 +35,7 @@ export default function DelegateButton({ delegateAddress, tokenAddress }: Delega
     abi: erc20VotesAbi,
     functionName: 'delegates',
     args: address ? [address] : undefined,
+    chainId: arbitrum.id,
     query: {
       enabled: !!address,
     },
@@ -41,6 +47,7 @@ export default function DelegateButton({ delegateAddress, tokenAddress }: Delega
     abi: erc20VotesAbi,
     functionName: 'balanceOf',
     args: address ? [address] : undefined,
+    chainId: arbitrum.id,
     query: {
       enabled: !!address,
     },
@@ -89,6 +96,23 @@ export default function DelegateButton({ delegateAddress, tokenAddress }: Delega
       return;
     }
 
+    // Switch to Arbitrum if not already on it
+    if (!isOnArbitrum) {
+      try {
+        switchChain({ chainId: arbitrum.id });
+        return; // User will need to click again after switching
+      } catch (err) {
+        console.error('Chain switch error:', err);
+        setDelegationStatus('error');
+        setErrorMessage('Please switch to Arbitrum network');
+        setTimeout(() => {
+          setDelegationStatus('idle');
+          setErrorMessage(null);
+        }, 5000);
+        return;
+      }
+    }
+
     setDelegationStatus('idle');
     setErrorMessage(null);
 
@@ -98,6 +122,7 @@ export default function DelegateButton({ delegateAddress, tokenAddress }: Delega
         abi: erc20VotesAbi,
         functionName: 'delegate',
         args: [delegateAddress as `0x${string}`],
+        chainId: arbitrum.id,
       });
     } catch (err) {
       console.error('Delegation error:', err);
@@ -119,6 +144,17 @@ export default function DelegateButton({ delegateAddress, tokenAddress }: Delega
           Delegate your ARB
           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </>
+      );
+    }
+
+    if (!isOnArbitrum) {
+      return (
+        <>
+          Switch to Arbitrum
+          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
           </svg>
         </>
       );
@@ -164,7 +200,7 @@ export default function DelegateButton({ delegateAddress, tokenAddress }: Delega
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
-          Already Delegated
+          Delegating {formattedBalance} ARB
         </>
       );
     }

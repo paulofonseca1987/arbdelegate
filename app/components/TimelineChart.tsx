@@ -17,6 +17,7 @@ import type { TimelineEntry, VoteEntry } from "@/lib/types";
 interface TimelineChartProps {
   timeline: TimelineEntry[];
   votes?: VoteEntry[];
+  lastSyncTimestamp?: number; // Unix timestamp in milliseconds
 }
 
 // Vote source colors
@@ -38,6 +39,7 @@ type VoteSource = keyof typeof VOTE_COLORS;
 export default function TimelineChart({
   timeline,
   votes = [],
+  lastSyncTimestamp,
 }: TimelineChartProps) {
   const [hiddenDelegates, setHiddenDelegates] = useState<Set<string>>(
     new Set(),
@@ -126,7 +128,10 @@ export default function TimelineChart({
   });
 
   // Add a synthetic data point at end of chart domain to extend lines
-  const endDate = new Date("2026-01-01").getTime() / 1000;
+  // Use lastSyncTimestamp if provided (convert from ms to seconds), otherwise use last timeline entry
+  const endDate = lastSyncTimestamp
+    ? Math.floor(lastSyncTimestamp / 1000)
+    : (chartData.length > 0 ? chartData[chartData.length - 1].timestamp : new Date().getTime() / 1000);
   if (chartData.length > 0) {
     const lastEntry = chartData[chartData.length - 1];
     if (lastEntry.timestamp < endDate) {
@@ -419,17 +424,21 @@ export default function TimelineChart({
     return null;
   };
 
-  // Set fixed date range: September 1st 2024 to January 1st 2026
+  // Set date range: September 1st 2024 to the last synced timestamp
   const startDate = new Date("2024-09-01").getTime() / 1000; // Unix timestamp
   // endDate is defined earlier (for synthetic point)
 
-  // Generate ticks for the 1st of each month
-  const allMonthlyTicks: number[] = [];
-  for (let year = 2024; year <= 2026; year++) {
-    const startMonth = year === 2024 ? 8 : 0; // September (8) for 2024, January (0) for others
-    const endMonth = year === 2026 ? 0 : 11; // January (0) for 2026, December (11) for others
+  // Generate ticks for the 1st of each month up to the end date
+  const endDateObj = new Date(endDate * 1000);
+  const endYear = endDateObj.getFullYear();
+  const endMonth = endDateObj.getMonth();
 
-    for (let month = startMonth; month <= endMonth; month++) {
+  const allMonthlyTicks: number[] = [];
+  for (let year = 2024; year <= endYear; year++) {
+    const loopStartMonth = year === 2024 ? 8 : 0; // September (8) for 2024, January (0) for others
+    const loopEndMonth = year === endYear ? endMonth : 11; // End month for final year, December (11) for others
+
+    for (let month = loopStartMonth; month <= loopEndMonth; month++) {
       const monthStart = new Date(year, month, 1).getTime() / 1000;
       allMonthlyTicks.push(monthStart);
     }

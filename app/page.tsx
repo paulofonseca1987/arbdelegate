@@ -488,7 +488,22 @@ export default function Home() {
                   </div>
                 </div>
               ) : timeline.length > 0 ? (
-                <TimelineChart timeline={timeline} votes={votes} />
+                <>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 text-right">
+                    All data as of{" "}
+                    {new Date(metadata.lastSyncTimestamp).toLocaleString()}{" "}
+                    on Arbitrum block{" "}
+                    <a
+                      href={`https://arbiscan.io/block/${metadata.lastSyncedBlock}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      {metadata.lastSyncedBlock.toLocaleString()}
+                    </a>
+                  </p>
+                  <TimelineChart timeline={timeline} votes={votes} lastSyncTimestamp={metadata.lastSyncTimestamp} />
+                </>
               ) : (
                 <p className="text-gray-500 dark:text-gray-400">
                   No timeline data available.
@@ -532,7 +547,7 @@ export default function Home() {
               </a>
             </p>
             <a
-              href="https://github.com/paulofonseca1987/paulofi"
+              href="https://github.com/paulofonseca1987/arbdelegate"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400"
