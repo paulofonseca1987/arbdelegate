@@ -325,15 +325,15 @@ export default function Home() {
                 Delegate Activity Dashboard
               </h1>
               <p className="text-blue-100 text-lg mb-4 max-w-2xl">
-                Track delegation activity, voting power, and governance participation for this delegate.
+                Track delegation activity, voting power, and governance participation for:
               </p>
               {delegateAddress && (
-                <div className="flex items-center gap-2 text-sm text-blue-200">
-                  <span className="font-mono bg-white/10 px-3 py-1 rounded-full break-all">
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="font-mono bg-white/20 text-white px-3 py-1 rounded-full break-all">
                     {delegateAddress}
                   </span>
-                  <span className="text-blue-300">•</span>
-                  <span>Arbitrum DAO Delegate</span>
+                  <span className="text-white/60">•</span>
+                  <span className="text-white/80">Arbitrum DAO Delegate</span>
                 </div>
               )}
             </div>
