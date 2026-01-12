@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import './globals.css';
-import WalletProvider from './components/WalletProvider';
+
+const WalletProvider = dynamic(
+  () => import('./components/WalletProvider'),
+  { ssr: false }
+);
 
 export const metadata: Metadata = {
   title: 'Delegate Activity Dashboard',

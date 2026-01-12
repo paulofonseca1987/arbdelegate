@@ -19,7 +19,7 @@ const LOCAL_DATA_DIR = join(process.cwd(), 'data');
 // Cache storage with TTL
 const cache = new Map<string, { data: any; expiresAt: number }>();
 
-// Ensure data directory exists
+// Ensure base data directory exists
 if (typeof window === 'undefined') {
   console.log('📁 Using LOCAL FILE STORAGE (data/ directory)');
   try {
@@ -30,6 +30,39 @@ if (typeof window === 'undefined') {
   } catch (error) {
     console.error('Failed to create data directory:', error);
   }
+}
+
+/**
+ * Normalize Ethereum address to lowercase
+ */
+export function normalizeAddress(address: string): string {
+  const normalized = address.toLowerCase();
+  if (!/^0x[a-f0-9]{40}$/.test(normalized)) {
+    throw new Error(`Invalid Ethereum address format: ${address}`);
+  }
+  return normalized;
+}
+
+/**
+ * Get data directory for a specific address
+ */
+function getAddressDataDir(address: string): string {
+  const normalized = normalizeAddress(address);
+  const dir = join(LOCAL_DATA_DIR, normalized);
+
+  // Ensure address directory exists
+  if (typeof window === 'undefined' && !existsSync(dir)) {
+    mkdirSync(dir, { recursive: true });
+  }
+
+  return dir;
+}
+
+/**
+ * Get cache key with address prefix
+ */
+function getCacheKey(fileName: string, address?: string): string {
+  return address ? `${normalizeAddress(address)}:${fileName}` : fileName;
 }
 
 /**
@@ -64,9 +97,10 @@ export function clearCache(): void {
 /**
  * Read data from local file
  */
-function readLocalFile(fileName: string): string | null {
+function readLocalFile(fileName: string, address?: string): string | null {
   try {
-    const filePath = join(LOCAL_DATA_DIR, fileName);
+    const baseDir = address ? getAddressDataDir(address) : LOCAL_DATA_DIR;
+    const filePath = join(baseDir, fileName);
     if (!existsSync(filePath)) {
       return null;
     }
@@ -80,9 +114,10 @@ function readLocalFile(fileName: string): string | null {
 /**
  * Write data to local file
  */
-function writeLocalFile(fileName: string, data: string): boolean {
+function writeLocalFile(fileName: string, data: string, address?: string): boolean {
   try {
-    const filePath = join(LOCAL_DATA_DIR, fileName);
+    const baseDir = address ? getAddressDataDir(address) : LOCAL_DATA_DIR;
+    const filePath = join(baseDir, fileName);
     writeFileSync(filePath, data, 'utf-8');
     return true;
   } catch (error) {
@@ -94,9 +129,10 @@ function writeLocalFile(fileName: string, data: string): boolean {
 /**
  * Delete local file
  */
-function deleteLocalFile(fileName: string): boolean {
+function deleteLocalFile(fileName: string, address?: string): boolean {
   try {
-    const filePath = join(LOCAL_DATA_DIR, fileName);
+    const baseDir = address ? getAddressDataDir(address) : LOCAL_DATA_DIR;
+    const filePath = join(baseDir, fileName);
     if (existsSync(filePath)) {
       unlinkSync(filePath);
     }
@@ -118,8 +154,8 @@ const PROGRESS_FILE_NAME = 'data-sync-progress.json';
 /**
  * Check if sync lock exists and is valid
  */
-export async function checkSyncLock(): Promise<SyncLock | null> {
-  const lockData = readLocalFile(LOCK_FILE_NAME);
+export async function checkSyncLock(address?: string): Promise<SyncLock | null> {
+  const lockData = readLocalFile(LOCK_FILE_NAME, address);
   if (!lockData) return null;
 
   try {
@@ -129,7 +165,7 @@ export async function checkSyncLock(): Promise<SyncLock | null> {
     // Check if lock is stale
     if (now - lock.startedAt > LOCK_TIMEOUT_MS) {
       console.warn('Stale lock detected, releasing...');
-      await releaseSyncLock();
+      await releaseSyncLock(address);
       return null;
     }
 
@@ -143,8 +179,8 @@ export async function checkSyncLock(): Promise<SyncLock | null> {
 /**
  * Acquire sync lock
  */
-export async function acquireSyncLock(): Promise<boolean> {
-  const existingLock = await checkSyncLock();
+export async function acquireSyncLock(address?: string): Promise<boolean> {
+  const existingLock = await checkSyncLock(address);
   if (existingLock) {
     console.log('Sync already in progress');
     return false;
@@ -156,16 +192,16 @@ export async function acquireSyncLock(): Promise<boolean> {
     pid: process.pid.toString()
   };
 
-  writeLocalFile(LOCK_FILE_NAME, JSON.stringify(lock));
+  writeLocalFile(LOCK_FILE_NAME, JSON.stringify(lock), address);
   return true;
 }
 
 /**
  * Release sync lock
  */
-export async function releaseSyncLock(): Promise<void> {
+export async function releaseSyncLock(address?: string): Promise<void> {
   try {
-    deleteLocalFile(LOCK_FILE_NAME);
+    deleteLocalFile(LOCK_FILE_NAME, address);
   } catch (error) {
     console.error('Error releasing lock:', error);
   }
@@ -181,25 +217,28 @@ const METADATA_CACHE_TTL = 30 * 1000; // 30 seconds
 /**
  * Store metadata
  */
-export async function storeMetadata(data: MetadataSchema): Promise<void> {
-  writeLocalFile(METADATA_FILE_NAME, JSON.stringify(data, null, 2));
-  setCachedData(METADATA_FILE_NAME, data, METADATA_CACHE_TTL);
+export async function storeMetadata(data: MetadataSchema, address?: string): Promise<void> {
+  const cacheKey = getCacheKey(METADATA_FILE_NAME, address);
+  writeLocalFile(METADATA_FILE_NAME, JSON.stringify(data, null, 2), address);
+  setCachedData(cacheKey, data, METADATA_CACHE_TTL);
 }
 
 /**
  * Get metadata with caching
  */
-export async function getMetadata(): Promise<MetadataSchema | null> {
+export async function getMetadata(address?: string): Promise<MetadataSchema | null> {
+  const cacheKey = getCacheKey(METADATA_FILE_NAME, address);
+
   // Check cache first
-  const cached = getCachedData<MetadataSchema>(METADATA_FILE_NAME);
+  const cached = getCachedData<MetadataSchema>(cacheKey);
   if (cached) return cached;
 
-  const data = readLocalFile(METADATA_FILE_NAME);
+  const data = readLocalFile(METADATA_FILE_NAME, address);
   if (!data) return null;
 
   try {
     const metadata: MetadataSchema = JSON.parse(data);
-    setCachedData(METADATA_FILE_NAME, metadata, METADATA_CACHE_TTL);
+    setCachedData(cacheKey, metadata, METADATA_CACHE_TTL);
     return metadata;
   } catch (error) {
     console.error('Error parsing metadata:', error);
@@ -217,25 +256,28 @@ const CURRENT_STATE_CACHE_TTL = 60 * 1000; // 60 seconds
 /**
  * Store current state
  */
-export async function storeCurrentState(data: CurrentStateSchema): Promise<void> {
-  writeLocalFile(CURRENT_STATE_FILE_NAME, JSON.stringify(data, null, 2));
-  setCachedData(CURRENT_STATE_FILE_NAME, data, CURRENT_STATE_CACHE_TTL);
+export async function storeCurrentState(data: CurrentStateSchema, address?: string): Promise<void> {
+  const cacheKey = getCacheKey(CURRENT_STATE_FILE_NAME, address);
+  writeLocalFile(CURRENT_STATE_FILE_NAME, JSON.stringify(data, null, 2), address);
+  setCachedData(cacheKey, data, CURRENT_STATE_CACHE_TTL);
 }
 
 /**
  * Get current state with caching
  */
-export async function getCurrentState(): Promise<CurrentStateSchema | null> {
+export async function getCurrentState(address?: string): Promise<CurrentStateSchema | null> {
+  const cacheKey = getCacheKey(CURRENT_STATE_FILE_NAME, address);
+
   // Check cache first
-  const cached = getCachedData<CurrentStateSchema>(CURRENT_STATE_FILE_NAME);
+  const cached = getCachedData<CurrentStateSchema>(cacheKey);
   if (cached) return cached;
 
-  const data = readLocalFile(CURRENT_STATE_FILE_NAME);
+  const data = readLocalFile(CURRENT_STATE_FILE_NAME, address);
   if (!data) return null;
 
   try {
     const currentState: CurrentStateSchema = JSON.parse(data);
-    setCachedData(CURRENT_STATE_FILE_NAME, currentState, CURRENT_STATE_CACHE_TTL);
+    setCachedData(cacheKey, currentState, CURRENT_STATE_CACHE_TTL);
     return currentState;
   } catch (error) {
     console.error('Error parsing current state:', error);
@@ -254,25 +296,28 @@ const TIMELINE_PARTITION_CACHE_TTL = 300 * 1000; // 300 seconds
 /**
  * Store timeline index
  */
-async function storeTimelineIndex(index: TimelineIndex): Promise<void> {
-  writeLocalFile(TIMELINE_INDEX_FILE_NAME, JSON.stringify(index, null, 2));
-  setCachedData(TIMELINE_INDEX_FILE_NAME, index, TIMELINE_INDEX_CACHE_TTL);
+async function storeTimelineIndex(index: TimelineIndex, address?: string): Promise<void> {
+  const cacheKey = getCacheKey(TIMELINE_INDEX_FILE_NAME, address);
+  writeLocalFile(TIMELINE_INDEX_FILE_NAME, JSON.stringify(index, null, 2), address);
+  setCachedData(cacheKey, index, TIMELINE_INDEX_CACHE_TTL);
 }
 
 /**
  * Get timeline index with caching
  */
-async function getTimelineIndex(): Promise<TimelineIndex | null> {
+async function getTimelineIndex(address?: string): Promise<TimelineIndex | null> {
+  const cacheKey = getCacheKey(TIMELINE_INDEX_FILE_NAME, address);
+
   // Check cache first
-  const cached = getCachedData<TimelineIndex>(TIMELINE_INDEX_FILE_NAME);
+  const cached = getCachedData<TimelineIndex>(cacheKey);
   if (cached) return cached;
 
-  const data = readLocalFile(TIMELINE_INDEX_FILE_NAME);
+  const data = readLocalFile(TIMELINE_INDEX_FILE_NAME, address);
   if (!data) return null;
 
   try {
     const index: TimelineIndex = JSON.parse(data);
-    setCachedData(TIMELINE_INDEX_FILE_NAME, index, TIMELINE_INDEX_CACHE_TTL);
+    setCachedData(cacheKey, index, TIMELINE_INDEX_CACHE_TTL);
     return index;
   } catch (error) {
     console.error('Error parsing timeline index:', error);
@@ -283,28 +328,30 @@ async function getTimelineIndex(): Promise<TimelineIndex | null> {
 /**
  * Store timeline partition
  */
-async function storeTimelinePartition(partitionId: number, partition: TimelinePartition): Promise<void> {
+async function storeTimelinePartition(partitionId: number, partition: TimelinePartition, address?: string): Promise<void> {
   const fileName = `data-timeline-entries-${partitionId}.json`;
-  writeLocalFile(fileName, JSON.stringify(partition, null, 2));
-  setCachedData(fileName, partition, TIMELINE_PARTITION_CACHE_TTL);
+  const cacheKey = getCacheKey(fileName, address);
+  writeLocalFile(fileName, JSON.stringify(partition, null, 2), address);
+  setCachedData(cacheKey, partition, TIMELINE_PARTITION_CACHE_TTL);
 }
 
 /**
  * Get timeline partition with caching
  */
-export async function getTimelinePartition(partitionId: number): Promise<TimelinePartition | null> {
+export async function getTimelinePartition(partitionId: number, address?: string): Promise<TimelinePartition | null> {
   const fileName = `data-timeline-entries-${partitionId}.json`;
+  const cacheKey = getCacheKey(fileName, address);
 
   // Check cache first
-  const cached = getCachedData<TimelinePartition>(fileName);
+  const cached = getCachedData<TimelinePartition>(cacheKey);
   if (cached) return cached;
 
-  const data = readLocalFile(fileName);
+  const data = readLocalFile(fileName, address);
   if (!data) return null;
 
   try {
     const partition: TimelinePartition = JSON.parse(data);
-    setCachedData(fileName, partition, TIMELINE_PARTITION_CACHE_TTL);
+    setCachedData(cacheKey, partition, TIMELINE_PARTITION_CACHE_TTL);
     return partition;
   } catch (error) {
     console.error(`Error parsing partition ${partitionId}:`, error);
@@ -315,10 +362,10 @@ export async function getTimelinePartition(partitionId: number): Promise<Timelin
 /**
  * Append timeline entries, creating new partitions as needed
  */
-export async function appendTimelineEntries(newEntries: TimelineEntry[]): Promise<void> {
+export async function appendTimelineEntries(newEntries: TimelineEntry[], address?: string): Promise<void> {
   if (newEntries.length === 0) return;
 
-  let index = await getTimelineIndex();
+  let index = await getTimelineIndex(address);
 
   // Initialize index if it doesn't exist
   if (!index) {
@@ -348,7 +395,7 @@ export async function appendTimelineEntries(newEntries: TimelineEntry[]): Promis
     const currentPartitionId = lastPartition.id;
 
     // Load existing partition
-    let partition = await getTimelinePartition(currentPartitionId);
+    let partition = await getTimelinePartition(currentPartitionId, address);
     if (!partition) {
       partition = {
         partitionId: currentPartitionId,
@@ -362,7 +409,7 @@ export async function appendTimelineEntries(newEntries: TimelineEntry[]): Promis
 
     // Append entries to partition
     partition.entries.push(...batch);
-    await storeTimelinePartition(currentPartitionId, partition);
+    await storeTimelinePartition(currentPartitionId, partition, address);
 
     // Update partition info
     lastPartition.entryCount = partition.entries.length;
@@ -388,20 +435,20 @@ export async function appendTimelineEntries(newEntries: TimelineEntry[]): Promis
   index.totalEntries = index.partitions.reduce((sum, p) => sum + p.entryCount, 0);
 
   // Store updated index
-  await storeTimelineIndex(index);
+  await storeTimelineIndex(index, address);
 }
 
 /**
  * Get full timeline (all partitions)
  */
-export async function getFullTimeline(): Promise<TimelineEntry[]> {
-  const index = await getTimelineIndex();
+export async function getFullTimeline(address?: string): Promise<TimelineEntry[]> {
+  const index = await getTimelineIndex(address);
   if (!index || index.partitions.length === 0) return [];
 
   const allEntries: TimelineEntry[] = [];
 
   for (const partitionInfo of index.partitions) {
-    const partition = await getTimelinePartition(partitionInfo.id);
+    const partition = await getTimelinePartition(partitionInfo.id, address);
     if (partition) {
       allEntries.push(...partition.entries);
     }
@@ -413,8 +460,8 @@ export async function getFullTimeline(): Promise<TimelineEntry[]> {
 /**
  * Get timeline range by block numbers
  */
-export async function getTimelineRange(fromBlock: number, toBlock: number): Promise<TimelineEntry[]> {
-  const index = await getTimelineIndex();
+export async function getTimelineRange(fromBlock: number, toBlock: number, address?: string): Promise<TimelineEntry[]> {
+  const index = await getTimelineIndex(address);
   if (!index || index.partitions.length === 0) return [];
 
   const entries: TimelineEntry[] = [];
@@ -425,7 +472,7 @@ export async function getTimelineRange(fromBlock: number, toBlock: number): Prom
   );
 
   for (const partitionInfo of relevantPartitions) {
-    const partition = await getTimelinePartition(partitionInfo.id);
+    const partition = await getTimelinePartition(partitionInfo.id, address);
     if (partition) {
       const filtered = partition.entries.filter(e =>
         e.blockNumber >= fromBlock && e.blockNumber <= toBlock
@@ -597,15 +644,15 @@ export async function getVotingPowerData(): Promise<VotingPowerData | null> {
 /**
  * Update sync progress
  */
-export async function updateSyncProgress(progress: SyncProgress): Promise<void> {
-  writeLocalFile(PROGRESS_FILE_NAME, JSON.stringify(progress));
+export async function updateSyncProgress(progress: SyncProgress, address?: string): Promise<void> {
+  writeLocalFile(PROGRESS_FILE_NAME, JSON.stringify(progress), address);
 }
 
 /**
  * Get sync progress
  */
-export async function getSyncProgress(): Promise<SyncProgress | null> {
-  const data = readLocalFile(PROGRESS_FILE_NAME);
+export async function getSyncProgress(address?: string): Promise<SyncProgress | null> {
+  const data = readLocalFile(PROGRESS_FILE_NAME, address);
   if (!data) return null;
 
   try {
@@ -619,9 +666,9 @@ export async function getSyncProgress(): Promise<SyncProgress | null> {
 /**
  * Clear sync progress
  */
-export async function clearSyncProgress(): Promise<void> {
+export async function clearSyncProgress(address?: string): Promise<void> {
   try {
-    deleteLocalFile(PROGRESS_FILE_NAME);
+    deleteLocalFile(PROGRESS_FILE_NAME, address);
   } catch (error) {
     console.error('Error clearing sync progress:', error);
   }
@@ -635,7 +682,7 @@ export async function clearSyncProgress(): Promise<void> {
  * Truncate timeline data after a specific block number
  * Removes all entries with blockNumber > maxBlock
  */
-export async function truncateTimelineAfterBlock(maxBlock: number): Promise<{
+export async function truncateTimelineAfterBlock(maxBlock: number, address?: string): Promise<{
   success: boolean;
   entriesRemoved: number;
   partitionsRemoved: number;
@@ -643,7 +690,7 @@ export async function truncateTimelineAfterBlock(maxBlock: number): Promise<{
 }> {
   console.log(`[Truncate] Truncating timeline data after block ${maxBlock}...`);
 
-  const index = await getTimelineIndex();
+  const index = await getTimelineIndex(address);
   if (!index || index.partitions.length === 0) {
     return { success: true, entriesRemoved: 0, partitionsRemoved: 0, lastBlockNumber: 0 };
   }
@@ -672,7 +719,7 @@ export async function truncateTimelineAfterBlock(maxBlock: number): Promise<{
 
     if (lastPartition.endBlock > maxBlock) {
       // Need to trim entries from this partition
-      const partition = await getTimelinePartition(lastPartition.id);
+      const partition = await getTimelinePartition(lastPartition.id, address);
       if (partition) {
         const originalLength = partition.entries.length;
         partition.entries = partition.entries.filter(e => e.blockNumber <= maxBlock);
@@ -681,7 +728,7 @@ export async function truncateTimelineAfterBlock(maxBlock: number): Promise<{
 
         if (partition.entries.length > 0) {
           // Update partition with trimmed entries
-          await storeTimelinePartition(lastPartition.id, partition);
+          await storeTimelinePartition(lastPartition.id, partition, address);
           lastPartition.entryCount = partition.entries.length;
           lastPartition.endBlock = partition.entries[partition.entries.length - 1].blockNumber;
           lastBlockNumber = lastPartition.endBlock;
@@ -699,7 +746,7 @@ export async function truncateTimelineAfterBlock(maxBlock: number): Promise<{
   // Delete orphaned partitions
   for (const partition of partitionsToDelete) {
     const fileName = `data-timeline-entries-${partition.id}.json`;
-    deleteLocalFile(fileName);
+    deleteLocalFile(fileName, address);
     entriesRemoved += partition.entryCount;
     partitionsRemoved++;
     console.log(`[Truncate] Deleted partition ${partition.id} (${partition.entryCount} entries)`);
@@ -708,22 +755,22 @@ export async function truncateTimelineAfterBlock(maxBlock: number): Promise<{
   // Update index
   index.partitions = partitionsToKeep;
   index.totalEntries = index.partitions.reduce((sum, p) => sum + p.entryCount, 0);
-  await storeTimelineIndex(index);
+  await storeTimelineIndex(index, address);
 
   // Update metadata
-  const metadata = await getMetadata();
+  const metadata = await getMetadata(address);
   if (metadata) {
     metadata.lastSyncedBlock = maxBlock;
     metadata.totalTimelineEntries = index.totalEntries;
     metadata.timelinePartitions = index.partitions.length;
-    await storeMetadata(metadata);
+    await storeMetadata(metadata, address);
   }
 
   // Update current state
-  const currentState = await getCurrentState();
+  const currentState = await getCurrentState(address);
   if (currentState) {
     currentState.asOfBlock = maxBlock;
-    await storeCurrentState(currentState);
+    await storeCurrentState(currentState, address);
   }
 
   // Clear cache

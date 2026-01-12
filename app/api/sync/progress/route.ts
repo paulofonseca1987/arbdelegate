@@ -1,9 +1,30 @@
-import { NextResponse } from 'next/server';
-import { getSyncProgress } from '@/lib/storage';
+import { NextRequest, NextResponse } from 'next/server';
+import { getSyncProgress, normalizeAddress } from '@/lib/storage';
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
-    const progress = await getSyncProgress();
+    const { searchParams } = request.nextUrl;
+    const addressParam = searchParams.get('address');
+
+    // Validate address parameter
+    if (!addressParam) {
+      return NextResponse.json(
+        { error: 'address parameter is required' },
+        { status: 400 }
+      );
+    }
+
+    let address: string;
+    try {
+      address = normalizeAddress(addressParam);
+    } catch (e) {
+      return NextResponse.json(
+        { error: 'Invalid address format' },
+        { status: 400 }
+      );
+    }
+
+    const progress = await getSyncProgress(address);
 
     if (!progress) {
       return NextResponse.json({

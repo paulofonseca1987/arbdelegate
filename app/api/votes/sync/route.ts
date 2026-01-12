@@ -1,9 +1,9 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import type { Config, VoteEntry, TimelineEntry } from '@/lib/types';
 import { fetchSnapshotVotes } from '@/lib/snapshot';
 import { createGovernorClient, createArchiveGovernorClient, createEthereumClient, fetchGovernorVotesWithSnapshots } from '@/lib/governor';
 import { appendVotes, getVotesMetadata, clearVotesCache } from '@/lib/votesStorage';
-import { getFullTimeline } from '@/lib/storage';
+import { getFullTimeline, normalizeAddress } from '@/lib/storage';
 import { getConfig, resolveEndBlock } from '@/lib/config';
 import type { Address } from 'viem';
 
@@ -35,12 +35,34 @@ function getDelegatorBreakdownAtBlock(
   return match?.delegators || {};
 }
 
-export async function POST() {
+export async function POST(request: NextRequest) {
   console.log('🗳️ Starting votes sync...');
+
+  // Parse request body
+  const body = await request.json().catch(() => ({}));
+
+  // Get address from body (required)
+  const addressParam = body.address;
+  if (!addressParam) {
+    return NextResponse.json(
+      { error: 'address is required in request body' },
+      { status: 400 }
+    );
+  }
+
+  let address: string;
+  try {
+    address = normalizeAddress(addressParam);
+  } catch (e) {
+    return NextResponse.json(
+      { error: 'Invalid address format' },
+      { status: 400 }
+    );
+  }
 
   try {
     const config = getConfig();
-    const delegateAddress = config.delegateAddress;
+    const delegateAddress = address;
     const snapshotSpace = config.snapshotSpace;
     const governors = config.governors;
 
@@ -67,7 +89,7 @@ export async function POST() {
 
     // Load timeline for delegator breakdown lookup
     console.log('📊 Loading timeline data...');
-    const timeline = await getFullTimeline();
+    const timeline = await getFullTimeline(address);
     console.log(`  Loaded ${timeline.length} timeline entries`);
 
     const allVotes: VoteEntry[] = [];
@@ -216,8 +238,8 @@ export async function POST() {
     // SAVE VOTES
     // =========================================================================
     console.log(`\n💾 Saving ${allVotes.length} votes...`);
-    clearVotesCache();
-    const savedData = await appendVotes(allVotes);
+    clearVotesCache(address);
+    const savedData = await appendVotes(allVotes, address);
 
     const result = {
       message: 'Votes sync completed',
@@ -239,9 +261,30 @@ export async function POST() {
   }
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  // Get address from query parameter
+  const { searchParams } = request.nextUrl;
+  const addressParam = searchParams.get('address');
+
+  if (!addressParam) {
+    return NextResponse.json(
+      { error: 'address parameter is required' },
+      { status: 400 }
+    );
+  }
+
+  let address: string;
+  try {
+    address = normalizeAddress(addressParam);
+  } catch (e) {
+    return NextResponse.json(
+      { error: 'Invalid address format' },
+      { status: 400 }
+    );
+  }
+
   // GET request returns current sync status/metadata
-  const metadata = await getVotesMetadata();
+  const metadata = await getVotesMetadata(address);
 
   if (!metadata) {
     return NextResponse.json({

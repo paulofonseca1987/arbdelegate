@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { WagmiProvider, createConfig, http } from 'wagmi';
+import { WagmiProvider } from 'wagmi';
 import { arbitrum } from 'wagmi/chains';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RainbowKitProvider, getDefaultConfig, darkTheme } from '@rainbow-me/rainbowkit';
@@ -11,7 +11,7 @@ const config = getDefaultConfig({
   appName: 'Delegate Activity Dashboard',
   projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || 'demo',
   chains: [arbitrum],
-  ssr: true,
+  ssr: false,
 });
 
 const queryClient = new QueryClient();

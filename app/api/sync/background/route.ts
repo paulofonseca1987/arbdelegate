@@ -10,7 +10,8 @@ import {
   appendTimelineEntries,
   clearCache,
   updateSyncProgress,
-  clearSyncProgress
+  clearSyncProgress,
+  normalizeAddress
 } from '@/lib/storage';
 import { getConfig, resolveEndBlock } from '@/lib/config';
 import type { Address } from 'viem';
@@ -121,8 +122,30 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
+  // Parse request body
+  const body = await request.json().catch(() => ({}));
+
+  // Get address from body (required)
+  const addressParam = body.address;
+  if (!addressParam) {
+    return NextResponse.json(
+      { error: 'address is required in request body' },
+      { status: 400 }
+    );
+  }
+
+  let address: string;
+  try {
+    address = normalizeAddress(addressParam);
+  } catch (e) {
+    return NextResponse.json(
+      { error: 'Invalid address format' },
+      { status: 400 }
+    );
+  }
+
   // Acquire sync lock
-  const lockAcquired = await acquireSyncLock();
+  const lockAcquired = await acquireSyncLock(address);
   if (!lockAcquired) {
     return NextResponse.json({
       message: 'Sync already in progress'
@@ -133,17 +156,16 @@ export async function POST(request: NextRequest) {
     const config = getConfig();
     const eventClient = createEventFetchingClient(); // Free RPC for event fetching
     const archiveClient = createArchiveClient(); // DRPC for historical balance queries
-    const delegateAddress = config.delegateAddress as Address;
+    const delegateAddress = address as Address;
     const tokenAddress = config.tokenAddress as Address;
 
     // Parse custom block range from request body if provided
-    const body = await request.json().catch(() => ({}));
     const customFromBlock = body.fromBlock ? BigInt(body.fromBlock) : null;
     const customToBlock = body.toBlock ? BigInt(body.toBlock) : null;
 
     // Get existing data to determine sync range
-    const metadata = await getMetadata();
-    const currentState = await getCurrentState();
+    const metadata = await getMetadata(address);
+    const currentState = await getCurrentState(address);
 
     // Full sync from configured startBlock to endBlock (or custom range)
     const startBlock = BigInt(config.startBlock);
@@ -166,7 +188,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (fromBlock > toBlock) {
-      await releaseSyncLock();
+      await releaseSyncLock(address);
       return NextResponse.json({
         message: 'Already up to date',
         lastSyncedBlock: Number(toBlock),
@@ -347,18 +369,18 @@ export async function POST(request: NextRequest) {
           delegators: currentDelegators
         };
 
-        await storeMetadata(newMetadata);
-        await storeCurrentState(newCurrentState);
+        await storeMetadata(newMetadata, address);
+        await storeCurrentState(newCurrentState, address);
 
         if (newTimelineEntries.length > 0) {
-          await appendTimelineEntries(newTimelineEntries);
+          await appendTimelineEntries(newTimelineEntries, address);
         }
 
         // Update total events counter BEFORE clearing accumulated events
         totalEventsProcessed += accumulatedEvents.length;
 
         // Clear cache and reset for next batch
-        clearCache();
+        clearCache(address);
         accumulatedEvents = [];
         lastSaveBlock = currentTo;
 
@@ -388,7 +410,7 @@ export async function POST(request: NextRequest) {
         percentComplete,
         estimatedTimeRemaining,
         startedAt: syncStartTime
-      });
+      }, address);
 
       currentFrom = currentTo + 1n;
 
@@ -399,12 +421,12 @@ export async function POST(request: NextRequest) {
     console.log(`[Background Sync] Sync completed: ${totalEventsProcessed} total events processed`);
 
     // Clear progress and release lock
-    await clearSyncProgress();
-    await releaseSyncLock();
+    await clearSyncProgress(address);
+    await releaseSyncLock(address);
 
     // Get final metadata for response
-    const finalMetadata = await getMetadata();
-    const finalState = await getCurrentState();
+    const finalMetadata = await getMetadata(address);
+    const finalState = await getCurrentState(address);
 
     return NextResponse.json({
       message: 'Background sync completed',
@@ -415,8 +437,8 @@ export async function POST(request: NextRequest) {
     });
   } catch (error: any) {
     console.error('[Background Sync] Error:', error);
-    await clearSyncProgress();
-    await releaseSyncLock();
+    await clearSyncProgress(address);
+    await releaseSyncLock(address);
     return NextResponse.json(
       { error: error.message || 'Failed to sync data' },
       { status: 500 }
