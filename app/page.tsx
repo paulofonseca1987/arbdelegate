@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import TimelineChart from "./components/TimelineChart";
 import DelegatorsList from "./components/DelegatorsList";
 import VotesList from "./components/VotesList";
+import DelegateButton from "./components/DelegateButton";
 import type {
   MetadataSchema,
   CurrentStateSchema,
@@ -31,6 +32,7 @@ export default function Home() {
   const [syncStatus, setSyncStatus] = useState<string | null>(null);
   const [syncProgress, setSyncProgress] = useState<SyncProgress | null>(null);
   const [delegateAddress, setDelegateAddress] = useState<string | null>(null);
+  const [tokenAddress, setTokenAddress] = useState<string | null>(null);
   const [tallyDaoName, setTallyDaoName] = useState<string>('arbitrum');
   const [snapshotSpace, setSnapshotSpace] = useState<string>('arbitrumfoundation.eth');
 
@@ -226,6 +228,7 @@ export default function Home() {
         if (response.ok) {
           const config = await response.json();
           setDelegateAddress(config.delegateAddress);
+          setTokenAddress(config.tokenAddress);
           if (config.tallyDaoName) setTallyDaoName(config.tallyDaoName);
           if (config.snapshotSpace) setSnapshotSpace(config.snapshotSpace);
         }
@@ -312,17 +315,12 @@ export default function Home() {
               )}
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={`https://www.tally.xyz/gov/${tallyDaoName}/delegate/${delegateAddress}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-5 py-2.5 bg-white text-blue-700 hover:bg-blue-50 rounded-lg font-semibold transition-colors"
-              >
-                View on Tally
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
+              {delegateAddress && tokenAddress && (
+                <DelegateButton
+                  delegateAddress={delegateAddress}
+                  tokenAddress={tokenAddress}
+                />
+              )}
             </div>
           </div>
         </div>
