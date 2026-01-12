@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import WalletProvider from './components/WalletProvider';
 
 export const metadata: Metadata = {
   title: 'Delegate Activity Dashboard',
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <WalletProvider>
+          {children}
+        </WalletProvider>
+      </body>
     </html>
   );
 }
