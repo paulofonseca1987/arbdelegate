@@ -5,6 +5,29 @@ import TimelineChart from "./components/TimelineChart";
 import DelegatorsList from "./components/DelegatorsList";
 import VotesList from "./components/VotesList";
 import DelegateButton from "./components/DelegateButton";
+
+const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+// Helper function to format date as "Jan 1st, 2026 at 14:32:33 UTC"
+function formatBlockTimestamp(timestampSeconds: number): string {
+  const date = new Date(timestampSeconds * 1000);
+  const day = date.getUTCDate();
+  const ordinal = getOrdinalSuffix(day);
+  const month = MONTH_NAMES[date.getUTCMonth()];
+  const year = date.getUTCFullYear();
+  const time = date.toISOString().slice(11, 19); // HH:mm:ss
+  return `${month} ${day}${ordinal}, ${year} at ${time} UTC`;
+}
+
+function getOrdinalSuffix(day: number): string {
+  if (day > 3 && day < 21) return "th";
+  switch (day % 10) {
+    case 1: return "st";
+    case 2: return "nd";
+    case 3: return "rd";
+    default: return "th";
+  }
+}
 import type {
   MetadataSchema,
   CurrentStateSchema,
@@ -491,7 +514,7 @@ export default function Home() {
                 <>
                   <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 text-right">
                     All data as of{" "}
-                    {new Date(metadata.lastSyncTimestamp).toLocaleString()}{" "}
+                    {formatBlockTimestamp(metadata.lastBlockTimestamp || metadata.lastSyncTimestamp / 1000)}{" "}
                     on Arbitrum block{" "}
                     <a
                       href={`https://arbiscan.io/block/${metadata.lastSyncedBlock}`}
@@ -502,7 +525,7 @@ export default function Home() {
                       {metadata.lastSyncedBlock.toLocaleString()}
                     </a>
                   </p>
-                  <TimelineChart timeline={timeline} votes={votes} lastSyncTimestamp={metadata.lastSyncTimestamp} />
+                  <TimelineChart timeline={timeline} votes={votes} lastSyncTimestamp={(metadata.lastBlockTimestamp || metadata.lastSyncTimestamp / 1000) * 1000} />
                 </>
               ) : (
                 <p className="text-gray-500 dark:text-gray-400">
@@ -516,6 +539,8 @@ export default function Home() {
               <DelegatorsList
                 delegators={currentState.delegators}
                 timeline={timeline}
+                votes={votes}
+                delegateAddress={delegateAddress || undefined}
               />
             </div>
 

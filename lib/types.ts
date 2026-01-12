@@ -72,6 +72,7 @@ export interface DelegationEvent {
 export interface MetadataSchema {
   lastSyncedBlock: number;
   lastSyncTimestamp: number;
+  lastBlockTimestamp?: number; // Actual timestamp of the last synced block (in seconds)
   totalVotingPower: string;
   totalDelegators: number;
   totalTimelineEntries: number;

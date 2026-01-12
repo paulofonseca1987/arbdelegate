@@ -635,6 +635,17 @@ export async function getCurrentBlockNumber(client: PublicClient): Promise<numbe
 }
 
 /**
+ * Gets the timestamp of a specific block
+ * @param client - Client to use for fetching block
+ * @param blockNumber - Block number to get timestamp for
+ * @returns Timestamp in seconds
+ */
+export async function getBlockTimestamp(client: PublicClient, blockNumber: bigint): Promise<number> {
+  const block = await client.getBlock({ blockNumber });
+  return Number(block.timestamp);
+}
+
+/**
  * Gets the token creation block (approximation: first block with events)
  */
 export async function getTokenCreationBlock(

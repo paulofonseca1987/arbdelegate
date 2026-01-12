@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createEventFetchingClient, createArchiveClient, fetchDelegationEvents, fetchTransferEvents, getCurrentBlockNumber, getTokenCreationBlock } from '@/lib/blockchain';
+import { createEventFetchingClient, createArchiveClient, fetchDelegationEvents, fetchTransferEvents, getCurrentBlockNumber, getBlockTimestamp, getTokenCreationBlock } from '@/lib/blockchain';
 import {
   getVotingPowerData,
   acquireSyncLock,
@@ -282,10 +282,14 @@ export async function POST(request: NextRequest) {
 
         totalTimelineEntries += newTimelineEntries.length;
 
+        // Fetch the actual block timestamp for the last synced block
+        const lastBlockTimestamp = await getBlockTimestamp(eventClient, currentTo);
+
         // Store updated data
         const newMetadata: MetadataSchema = {
           lastSyncedBlock: Number(currentTo),
           lastSyncTimestamp: Date.now(),
+          lastBlockTimestamp,
           totalVotingPower: totalVotingPower.toString(),
           totalDelegators: Object.keys(currentDelegators).length,
           totalTimelineEntries,

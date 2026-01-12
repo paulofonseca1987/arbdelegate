@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import type { TimelineEntry } from '@/lib/types';
+import type { TimelineEntry, VoteEntry } from '@/lib/types';
 
 interface DelegatorsListProps {
   delegators: Record<string, string>;
   timeline: TimelineEntry[];
+  votes?: VoteEntry[];
+  delegateAddress?: string;
 }
 
 interface DelegatorInfo {
@@ -13,11 +15,24 @@ interface DelegatorInfo {
   dateStart: number | null;
   dateEnd: number | null;
   currentBalance: bigint;
+  voteCount: number;
 }
 
-export default function DelegatorsList({ delegators, timeline }: DelegatorsListProps) {
-  const [sortColumn, setSortColumn] = useState<'dateStart' | 'currentBalance'>('currentBalance');
+export default function DelegatorsList({ delegators, timeline, votes = [], delegateAddress }: DelegatorsListProps) {
+  const [sortColumn, setSortColumn] = useState<'dateStart' | 'currentBalance' | 'voteCount'>('currentBalance');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
+
+  // Count votes per delegator
+  const votesPerDelegator = new Map<string, number>();
+  votes.forEach((vote) => {
+    Object.entries(vote.delegatorBreakdown).forEach(([addr, balance]) => {
+      const addrLower = addr.toLowerCase();
+      // Only count if they had non-zero voting power for this vote
+      if (BigInt(balance) > 0n) {
+        votesPerDelegator.set(addrLower, (votesPerDelegator.get(addrLower) || 0) + 1);
+      }
+    });
+  });
 
   // Process timeline to get all delegators (past and current) with dates
   const allDelegators = new Map<string, DelegatorInfo>();
@@ -32,6 +47,7 @@ export default function DelegatorsList({ delegators, timeline }: DelegatorsListP
           dateStart: entry.timestamp,
           dateEnd: null,
           currentBalance: 0n,
+          voteCount: votesPerDelegator.get(addrLower) || 0,
         });
       }
     });
@@ -65,6 +81,7 @@ export default function DelegatorsList({ delegators, timeline }: DelegatorsListP
         dateStart: null,
         dateEnd: null,
         currentBalance: BigInt(delegators[address]),
+        voteCount: votesPerDelegator.get(addrLower) || 0,
       });
     }
   });
@@ -82,6 +99,9 @@ export default function DelegatorsList({ delegators, timeline }: DelegatorsListP
         const dateA = a.dateStart || 0;
         const dateB = b.dateStart || 0;
         comparison = dateA - dateB;
+      } else if (sortColumn === 'voteCount') {
+        // Sort by vote count
+        comparison = a.voteCount - b.voteCount;
       }
 
       // Reverse if descending
@@ -142,7 +162,7 @@ export default function DelegatorsList({ delegators, timeline }: DelegatorsListP
     return (Number(balance) / Number(totalBalance)) * 100;
   };
 
-  const handleSort = (column: 'dateStart' | 'currentBalance') => {
+  const handleSort = (column: 'dateStart' | 'currentBalance' | 'voteCount') => {
     if (sortColumn === column) {
       // Toggle direction if same column
       setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
@@ -203,7 +223,7 @@ export default function DelegatorsList({ delegators, timeline }: DelegatorsListP
     URL.revokeObjectURL(url);
   };
 
-  const SortIcon = ({ column }: { column: 'dateStart' | 'currentBalance' }) => {
+  const SortIcon = ({ column }: { column: 'dateStart' | 'currentBalance' | 'voteCount' }) => {
     if (sortColumn !== column) {
       return (
         <svg className="w-4 h-4 ml-1 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -251,8 +271,17 @@ export default function DelegatorsList({ delegators, timeline }: DelegatorsListP
                 onClick={() => handleSort('currentBalance')}
               >
                 <div className="flex items-center">
-                  Voting Power
+                  Current Voting Power
                   <SortIcon column="currentBalance" />
+                </div>
+              </th>
+              <th
+                className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800"
+                onClick={() => handleSort('voteCount')}
+              >
+                <div className="flex items-center">
+                  Votes
+                  <SortIcon column="voteCount" />
                 </div>
               </th>
             </tr>
@@ -265,7 +294,7 @@ export default function DelegatorsList({ delegators, timeline }: DelegatorsListP
                 style={{ opacity: info.currentBalance === 0n ? 0.5 : 1 }}
               >
                 <td className="px-6 py-4">
-                  <div className="flex items-center">
+                  <div className="flex items-center flex-wrap gap-1">
                     <a
                       href={`https://arbiscan.io/address/${info.address}`}
                       target="_blank"
@@ -276,7 +305,7 @@ export default function DelegatorsList({ delegators, timeline }: DelegatorsListP
                     </a>
                     <button
                       onClick={() => navigator.clipboard.writeText(info.address)}
-                      className="ml-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                      className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
                       title="Copy address"
                     >
                       <svg
@@ -293,6 +322,11 @@ export default function DelegatorsList({ delegators, timeline }: DelegatorsListP
                         />
                       </svg>
                     </button>
+                    {delegateAddress && info.address.toLowerCase() === delegateAddress.toLowerCase() && (
+                      <span className="ml-1 px-2 py-0.5 text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 rounded-full">
+                        Self-delegation
+                      </span>
+                    )}
                   </div>
                   <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                     {formatDelegationPeriod(info.dateStart, info.dateEnd)}
@@ -319,6 +353,11 @@ export default function DelegatorsList({ delegators, timeline }: DelegatorsListP
                       </div>
                     </div>
                   )}
+                </td>
+                <td className="px-6 py-4">
+                  <span className="text-sm font-medium dark:text-gray-200">
+                    {info.voteCount}
+                  </span>
                 </td>
               </tr>
             ))}
