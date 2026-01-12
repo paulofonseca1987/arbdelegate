@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import TimelineChart from "./components/TimelineChart";
 import DelegatorsList from "./components/DelegatorsList";
 import VotesList from "./components/VotesList";
@@ -11,9 +11,7 @@ import type {
   SyncProgress,
   VoteEntry,
   VotesMetadata,
-  FundsWalletData,
 } from "@/lib/types";
-import { calculateDelegatorRewardShares } from "@/lib/rewardCalculation";
 
 export default function Home() {
   const [metadata, setMetadata] = useState<MetadataSchema | null>(null);
@@ -35,13 +33,6 @@ export default function Home() {
   const [delegateAddress, setDelegateAddress] = useState<string | null>(null);
   const [tallyDaoName, setTallyDaoName] = useState<string>('arbitrum');
   const [snapshotSpace, setSnapshotSpace] = useState<string>('arbitrumfoundation.eth');
-  const [fundsWalletData, setFundsWalletData] = useState<FundsWalletData | null>(null);
-
-  // Calculate reward shares from votes data
-  const rewardShares = useMemo(() => {
-    if (votes.length === 0) return {};
-    return calculateDelegatorRewardShares(votes);
-  }, [votes]);
 
   const fetchData = async () => {
     try {
@@ -89,12 +80,11 @@ export default function Home() {
       }
       setTimelineLoading(false);
 
-      // Load votes data and funds wallet data
+      // Load votes data
       try {
-        const [votesRes, votesMetaRes, fundsWalletRes] = await Promise.all([
+        const [votesRes, votesMetaRes] = await Promise.all([
           fetch("/api/votes?endpoint=votes"),
           fetch("/api/votes?endpoint=metadata"),
-          fetch("/api/funds-wallet"),
         ]);
 
         if (votesRes.ok) {
@@ -106,13 +96,8 @@ export default function Home() {
           const votesMeta = await votesMetaRes.json();
           setVotesMetadata(votesMeta);
         }
-
-        if (fundsWalletRes.ok) {
-          const fundsData = await fundsWalletRes.json();
-          setFundsWalletData(fundsData);
-        }
       } catch (err) {
-        console.warn("Failed to fetch votes or funds wallet:", err);
+        console.warn("Failed to fetch votes:", err);
       }
     } catch (err: any) {
       setError(err.message || "Failed to load data");
@@ -306,54 +291,36 @@ export default function Home() {
   return (
     <main className="min-h-screen p-8 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto">
-        {/* Hero Section */}
+        {/* Header Section */}
         <div className="mb-8 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg p-8 text-white">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="flex-1">
-              <div className="flex items-center gap-3 mb-3">
-                <h1 className="text-3xl md:text-4xl font-bold">
-                  10% Delegatoooor Kickback Program
-                </h1>
-                <span className="px-3 py-1 bg-amber-500 text-amber-950 text-sm font-semibold rounded-full">
-                  Ended
-                </span>
-              </div>
-              <p className="text-blue-100 text-lg mb-2 max-w-2xl">
-                An experiment in DAO governance alignment: Paulo Fonseca pledged to share 10% of all
-                Arbitrum DAO earnings with the token holders who delegated to him.
+              <h1 className="text-3xl md:text-4xl font-bold mb-3">
+                Delegate Activity Dashboard
+              </h1>
+              <p className="text-blue-100 text-lg mb-4 max-w-2xl">
+                Track delegation activity, voting power, and governance participation for this delegate.
               </p>
-              <p className="text-blue-200 text-sm mb-4">
-                This experiment ran until January 1st, 2026. Rewards shown below are final.
-              </p>
-              <div className="flex items-center gap-2 text-sm text-blue-200">
-                <span className="font-mono bg-white/10 px-3 py-1 rounded-full">
-                  paulofonseca.eth
-                </span>
-                <span className="text-blue-300">•</span>
-                <span>Arbitrum DAO Delegate</span>
-              </div>
+              {delegateAddress && (
+                <div className="flex items-center gap-2 text-sm text-blue-200">
+                  <span className="font-mono bg-white/10 px-3 py-1 rounded-full">
+                    {delegateAddress.slice(0, 6)}...{delegateAddress.slice(-4)}
+                  </span>
+                  <span className="text-blue-300">•</span>
+                  <span>Arbitrum DAO Delegate</span>
+                </div>
+              )}
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="https://forum.arbitrum.foundation/t/paulo-fonseca-10-delegatoooor-kickback-program/28271"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/30 rounded-lg font-medium transition-colors"
-              >
-                Read Proposal
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-              <a
-                href="https://www.tally.xyz/gov/arbitrum/delegate/paulofonseca.eth"
+                href={`https://www.tally.xyz/gov/${tallyDaoName}/delegate/${delegateAddress}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-5 py-2.5 bg-white text-blue-700 hover:bg-blue-50 rounded-lg font-semibold transition-colors"
               >
-                Delegate Now
+                View on Tally
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
             </div>
@@ -467,7 +434,7 @@ export default function Home() {
                     {votesMetadata?.totalVotes || 0} Votes Cast
                   </p>
                   <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                    both offchain and onchain until January 1st, 2026
+                    both offchain and onchain
                   </p>
                 </div>
                 <div className="flex-1 text-center">
@@ -481,7 +448,7 @@ export default function Home() {
                         (balance) => BigInt(balance) > 0n,
                       ).length
                     }{" "}
-                    Active Delegators as of January 1st, 2026
+                    currently active
                   </p>
                 </div>
                 <div className="flex-1 text-center">
@@ -509,7 +476,7 @@ export default function Home() {
                     })()}
                   </p>
                   <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                    in Voting Power as of January 1st, 2026
+                    total voting power
                   </p>
                 </div>
               </div>
@@ -536,8 +503,6 @@ export default function Home() {
               <DelegatorsList
                 delegators={currentState.delegators}
                 timeline={timeline}
-                rewardShares={rewardShares}
-                fundsWalletData={fundsWalletData}
               />
             </div>
 

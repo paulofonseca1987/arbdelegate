@@ -1,13 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import type { TimelineEntry, DelegatorRewardShare, FundsWalletData } from '@/lib/types';
+import type { TimelineEntry } from '@/lib/types';
 
 interface DelegatorsListProps {
   delegators: Record<string, string>;
   timeline: TimelineEntry[];
-  rewardShares?: Record<string, DelegatorRewardShare>;
-  fundsWalletData?: FundsWalletData | null;
 }
 
 interface DelegatorInfo {
@@ -15,13 +13,10 @@ interface DelegatorInfo {
   dateStart: number | null;
   dateEnd: number | null;
   currentBalance: bigint;
-  rewardContribution: bigint;
-  rewardVoteCount: number;
-  rewardPercentage: number;
 }
 
-export default function DelegatorsList({ delegators, timeline, rewardShares, fundsWalletData }: DelegatorsListProps) {
-  const [sortColumn, setSortColumn] = useState<'dateStart' | 'currentBalance' | 'rewardPercentage'>('rewardPercentage');
+export default function DelegatorsList({ delegators, timeline }: DelegatorsListProps) {
+  const [sortColumn, setSortColumn] = useState<'dateStart' | 'currentBalance'>('currentBalance');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
 
   // Process timeline to get all delegators (past and current) with dates
@@ -37,9 +32,6 @@ export default function DelegatorsList({ delegators, timeline, rewardShares, fun
           dateStart: entry.timestamp,
           dateEnd: null,
           currentBalance: 0n,
-          rewardContribution: 0n,
-          rewardVoteCount: 0,
-          rewardPercentage: 0,
         });
       }
     });
@@ -64,34 +56,18 @@ export default function DelegatorsList({ delegators, timeline, rewardShares, fun
     }
   });
 
-  // Add reward data for each delegator
-  if (rewardShares) {
-    // First, add any delegators that are in rewardShares but not in timeline
-    for (const address of Object.keys(rewardShares)) {
-      const addrLower = address.toLowerCase();
-      if (!allDelegators.has(addrLower)) {
-        allDelegators.set(addrLower, {
-          address: addrLower,
-          dateStart: null,
-          dateEnd: null,
-          currentBalance: 0n,
-          rewardContribution: 0n,
-          rewardVoteCount: 0,
-          rewardPercentage: 0,
-        });
-      }
+  // Also add any delegators from current state that might not be in timeline
+  Object.keys(delegators).forEach((address) => {
+    const addrLower = address.toLowerCase();
+    if (!allDelegators.has(addrLower)) {
+      allDelegators.set(addrLower, {
+        address: addrLower,
+        dateStart: null,
+        dateEnd: null,
+        currentBalance: BigInt(delegators[address]),
+      });
     }
-
-    // Then update all delegators with their reward data
-    allDelegators.forEach((info, address) => {
-      const rewardData = rewardShares[address];
-      if (rewardData) {
-        info.rewardContribution = BigInt(rewardData.totalContribution);
-        info.rewardVoteCount = rewardData.voteCount;
-        info.rewardPercentage = rewardData.rewardPercentage;
-      }
-    });
-  }
+  });
 
   const delegatorEntries = Array.from(allDelegators.values())
     .sort((a, b) => {
@@ -106,9 +82,6 @@ export default function DelegatorsList({ delegators, timeline, rewardShares, fun
         const dateA = a.dateStart || 0;
         const dateB = b.dateStart || 0;
         comparison = dateA - dateB;
-      } else if (sortColumn === 'rewardPercentage') {
-        // Sort by reward percentage
-        comparison = a.rewardPercentage - b.rewardPercentage;
       }
 
       // Reverse if descending
@@ -132,10 +105,6 @@ export default function DelegatorsList({ delegators, timeline, rewardShares, fun
       </div>
     );
   }
-
-  const formatAddress = (address: string) => {
-    return `${address.slice(0, 6)}...${address.slice(-4)}`;
-  };
 
   const formatBalance = (balance: bigint) => {
     const arb = Number(balance) / 1e18;
@@ -173,47 +142,7 @@ export default function DelegatorsList({ delegators, timeline, rewardShares, fun
     return (Number(balance) / Number(totalBalance)) * 100;
   };
 
-  // Calculate share value for a delegator based on their reward percentage
-  const calculateShareValue = (rewardPercentage: number) => {
-    if (!fundsWalletData || rewardPercentage <= 0) return null;
-
-    const shareRatio = rewardPercentage / 100;
-    const totalUsdValue = fundsWalletData.totalUsdValue * shareRatio;
-
-    const tokenBreakdown = fundsWalletData.tokens.map((token) => {
-      // Parse the balance and multiply by share ratio
-      const fullBalance = Number(token.balanceRaw) / Math.pow(10, token.symbol === 'USDC' ? 6 : 18);
-      const shareAmount = fullBalance * shareRatio;
-
-      return {
-        symbol: token.symbol,
-        amount: shareAmount,
-      };
-    });
-
-    return {
-      totalUsdValue,
-      tokenBreakdown,
-    };
-  };
-
-  const formatUsdValue = (value: number) => {
-    return value.toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
-  };
-
-  const formatTokenAmount = (amount: number, symbol: string) => {
-    // Use fewer decimals for stablecoins
-    const decimals = symbol === 'USDC' || symbol === 'USDT' || symbol === 'DAI' ? 2 : 2;
-    return amount.toLocaleString(undefined, {
-      minimumFractionDigits: 0,
-      maximumFractionDigits: decimals,
-    });
-  };
-
-  const handleSort = (column: 'dateStart' | 'currentBalance' | 'rewardPercentage') => {
+  const handleSort = (column: 'dateStart' | 'currentBalance') => {
     if (sortColumn === column) {
       // Toggle direction if same column
       setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
@@ -235,40 +164,24 @@ export default function DelegatorsList({ delegators, timeline, rewardShares, fun
   };
 
   const downloadCSV = () => {
-    // CSV header - include share value columns if funds wallet data is available
-    const baseHeaders = ['address', 'delegation_start_date', 'voting_power_at_endBlock', 'vote_count', 'reward_percentage'];
-    const shareValueHeaders = fundsWalletData
-      ? ['share_value_usd', ...fundsWalletData.tokens.map((t) => `share_${t.symbol.toLowerCase()}`)]
-      : [];
-    const headers = [...baseHeaders, ...shareValueHeaders];
+    // CSV header
+    const headers = ['address', 'delegation_start_date', 'delegation_end_date', 'voting_power_wei', 'voting_power_formatted'];
 
-    // Build rows sorted by reward percentage descending
-    const sortedEntries = [...delegatorEntries].sort((a, b) => b.rewardPercentage - a.rewardPercentage);
+    // Build rows sorted by voting power descending
+    const sortedEntries = [...delegatorEntries].sort((a, b) => {
+      if (a.currentBalance > b.currentBalance) return -1;
+      if (a.currentBalance < b.currentBalance) return 1;
+      return 0;
+    });
 
     const rows = sortedEntries.map((info) => {
-      const baseRow = [
+      return [
         info.address,
         formatDateForCSV(info.dateStart),
+        info.dateEnd ? formatDateForCSV(info.dateEnd) : 'active',
         formatBalanceForCSV(info.currentBalance),
-        info.rewardVoteCount.toString(),
-        info.rewardPercentage.toFixed(8),
+        formatBalance(info.currentBalance),
       ];
-
-      // Add share value columns if funds wallet data is available
-      if (fundsWalletData) {
-        const shareValue = calculateShareValue(info.rewardPercentage);
-        if (shareValue) {
-          baseRow.push(shareValue.totalUsdValue.toFixed(2));
-          shareValue.tokenBreakdown.forEach((t) => {
-            baseRow.push(t.amount.toFixed(6));
-          });
-        } else {
-          baseRow.push('0');
-          fundsWalletData.tokens.forEach(() => baseRow.push('0'));
-        }
-      }
-
-      return baseRow;
     });
 
     // Combine headers and rows
@@ -282,7 +195,7 @@ export default function DelegatorsList({ delegators, timeline, rewardShares, fun
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.setAttribute('href', url);
-    link.setAttribute('download', 'delegator-rewards.csv');
+    link.setAttribute('download', 'delegators.csv');
     link.style.visibility = 'hidden';
     document.body.appendChild(link);
     link.click();
@@ -290,7 +203,7 @@ export default function DelegatorsList({ delegators, timeline, rewardShares, fun
     URL.revokeObjectURL(url);
   };
 
-  const SortIcon = ({ column }: { column: 'dateStart' | 'currentBalance' | 'rewardPercentage' }) => {
+  const SortIcon = ({ column }: { column: 'dateStart' | 'currentBalance' }) => {
     if (sortColumn !== column) {
       return (
         <svg className="w-4 h-4 ml-1 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -338,24 +251,10 @@ export default function DelegatorsList({ delegators, timeline, rewardShares, fun
                 onClick={() => handleSort('currentBalance')}
               >
                 <div className="flex items-center">
-                  Voting Power (on Jan 1, 2026)
+                  Voting Power
                   <SortIcon column="currentBalance" />
                 </div>
               </th>
-              <th
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800"
-                onClick={() => handleSort('rewardPercentage')}
-              >
-                <div className="flex items-center">
-                  Reward Share
-                  <SortIcon column="rewardPercentage" />
-                </div>
-              </th>
-              {fundsWalletData && (
-                <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider min-w-[180px]">
-                  Share Value
-                </th>
-              )}
             </tr>
           </thead>
           <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
@@ -401,7 +300,7 @@ export default function DelegatorsList({ delegators, timeline, rewardShares, fun
                 </td>
                 <td className="px-6 py-4">
                   {info.currentBalance === 0n ? (
-                    <span className="text-sm text-gray-500 dark:text-gray-400">0 ARB Voting Power on Jan 1, 2026</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">0 ARB (inactive)</span>
                   ) : (
                     <div>
                       <div className="flex items-center">
@@ -421,50 +320,6 @@ export default function DelegatorsList({ delegators, timeline, rewardShares, fun
                     </div>
                   )}
                 </td>
-                <td className="px-6 py-4">
-                  {info.rewardPercentage > 0 ? (
-                    <div>
-                      <div className="flex items-center">
-                        <span className="text-sm font-bold dark:text-gray-200 mr-2">
-                          {info.rewardVoteCount} Votes
-                        </span>
-                        <span className="text-sm text-gray-600 dark:text-gray-400">
-                          {info.rewardPercentage.toFixed(2)}%
-                        </span>
-                      </div>
-                      <div className="w-32 bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-1">
-                        <div
-                          className="bg-green-600 h-2 rounded-full"
-                          style={{ width: `${Math.min(info.rewardPercentage, 100)}%` }}
-                        />
-                      </div>
-                    </div>
-                  ) : (
-                    <span className="text-sm text-gray-500 dark:text-gray-400">-</span>
-                  )}
-                </td>
-                {fundsWalletData && (
-                  <td className="px-6 py-4 text-right min-w-[180px]">
-                    {(() => {
-                      const shareValue = calculateShareValue(info.rewardPercentage);
-                      if (!shareValue) {
-                        return <span className="text-sm text-gray-400">-</span>;
-                      }
-                      return (
-                        <div>
-                          <div className="font-semibold text-green-600 dark:text-green-400">
-                            ${formatUsdValue(shareValue.totalUsdValue)} USD
-                          </div>
-                          <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                            {shareValue.tokenBreakdown
-                              .map((t) => `${formatTokenAmount(t.amount, t.symbol)} ${t.symbol}`)
-                              .join(' + ')}
-                          </div>
-                        </div>
-                      );
-                    })()}
-                  </td>
-                )}
               </tr>
             ))}
           </tbody>
@@ -473,4 +328,3 @@ export default function DelegatorsList({ delegators, timeline, rewardShares, fun
     </div>
   );
 }
-
