@@ -173,56 +173,6 @@ export default function DelegatorsList({ delegators, timeline, votes = [], deleg
     }
   };
 
-  const formatDateForCSV = (timestamp: number | null) => {
-    if (!timestamp) return '';
-    return new Date(timestamp * 1000).toISOString().split('T')[0]; // YYYY-MM-DD format
-  };
-
-  const formatBalanceForCSV = (balance: bigint) => {
-    // Return raw token amount (in wei)
-    return balance.toString();
-  };
-
-  const downloadCSV = () => {
-    // CSV header
-    const headers = ['address', 'delegation_start_date', 'delegation_end_date', 'voting_power_wei', 'voting_power_formatted'];
-
-    // Build rows sorted by voting power descending
-    const sortedEntries = [...delegatorEntries].sort((a, b) => {
-      if (a.currentBalance > b.currentBalance) return -1;
-      if (a.currentBalance < b.currentBalance) return 1;
-      return 0;
-    });
-
-    const rows = sortedEntries.map((info) => {
-      return [
-        info.address,
-        formatDateForCSV(info.dateStart),
-        info.dateEnd ? formatDateForCSV(info.dateEnd) : 'active',
-        formatBalanceForCSV(info.currentBalance),
-        formatBalance(info.currentBalance),
-      ];
-    });
-
-    // Combine headers and rows
-    const csvContent = [
-      headers.join(','),
-      ...rows.map((row) => row.join(',')),
-    ].join('\n');
-
-    // Create blob and download
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('download', 'delegators.csv');
-    link.style.visibility = 'hidden';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  };
-
   const SortIcon = ({ column }: { column: 'dateStart' | 'currentBalance' | 'voteCount' }) => {
     if (sortColumn !== column) {
       return (
@@ -244,15 +194,7 @@ export default function DelegatorsList({ delegators, timeline, votes = [], deleg
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold dark:text-white">Delegators</h2>
-        <button
-          onClick={downloadCSV}
-          className="text-sm text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:underline"
-        >
-          Download CSV
-        </button>
-      </div>
+      <h2 className="text-xl font-semibold dark:text-white mb-4">Delegators</h2>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
           <thead className="bg-gray-50 dark:bg-gray-900">
