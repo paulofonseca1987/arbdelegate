@@ -238,7 +238,7 @@ export async function POST(request: NextRequest) {
     // SAVE VOTES
     // =========================================================================
     console.log(`\n💾 Saving ${allVotes.length} votes...`);
-    clearVotesCache(address);
+    clearVotesCache();
     const savedData = await appendVotes(allVotes, address);
 
     const result = {

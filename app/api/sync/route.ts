@@ -365,7 +365,7 @@ export async function POST(request: NextRequest) {
         totalEventsProcessed += accumulatedEvents.length;
 
         // Clear cache and reset for next batch
-        clearCache(address);
+        clearCache();
         accumulatedEvents = [];
         lastSaveBlock = currentTo;
 

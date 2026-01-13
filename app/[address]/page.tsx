@@ -331,7 +331,7 @@ export default function DelegatePage() {
         <div className="max-w-7xl mx-auto">
           <div className="bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-200 px-6 py-4 rounded-lg">
             <h2 className="text-xl font-bold mb-2">Invalid Address</h2>
-            <p>The address "{addressFromUrl}" is not a valid Ethereum address.</p>
+            <p>The address &quot;{addressFromUrl}&quot; is not a valid Ethereum address.</p>
             <p className="mt-2 text-sm">Please check the URL and try again.</p>
           </div>
         </div>
