@@ -115,13 +115,15 @@ export default function TimelineChart({
       total: parseFloat(entry.totalVotingPower) / 1e18, // Convert from wei
     };
 
-    // Add each delegator's balance only if they exist in this entry
+    // Add each delegator's balance - explicitly set null for delegators that don't exist
+    // to prevent Recharts from drawing lines across undefined gaps
     delegatorAddresses.forEach((addr) => {
       if (entry.delegators[addr]) {
         const balance = entry.delegators[addr];
         dataPoint[addr] = parseFloat(balance) / 1e18;
+      } else {
+        dataPoint[addr] = null;
       }
-      // Don't add the property if the delegator doesn't exist in this entry
     });
 
     return dataPoint;
@@ -142,11 +144,9 @@ export default function TimelineChart({
         total: lastEntry.total,
         _hasChanges: false,
       };
-      // Copy all delegator values from last entry
+      // Copy all delegator values from last entry (including null values)
       delegatorAddresses.forEach((addr) => {
-        if (lastEntry[addr] !== undefined) {
-          syntheticPoint[addr] = lastEntry[addr];
-        }
+        syntheticPoint[addr] = lastEntry[addr];
       });
       chartData.push(syntheticPoint);
     }
@@ -585,6 +585,8 @@ export default function TimelineChart({
               fill={`url(#color${addr})`}
               name={addr}
               hide={hiddenDelegates.has(addr)}
+              connectNulls={false}
+              isAnimationActive={false}
             />
           ))}
           {/* Vote markers */}
