@@ -1,12 +1,12 @@
 {
-  "totalEntries": 189,
+  "totalEntries": 183,
   "partitionSize": 1000,
   "partitions": [
     {
       "id": 0,
       "startBlock": 250616848,
-      "endBlock": 254164952,
-      "entryCount": 189,
+      "endBlock": 420868842,
+      "entryCount": 183,
       "fileName": "data-timeline-entries-0.json"
     }
   ]

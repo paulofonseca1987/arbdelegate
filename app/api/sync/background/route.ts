@@ -95,7 +95,7 @@ async function processEvents(
       );
 
       timeline.push({
-        timestamp: blockEvents[0].timestamp, // All events in same block have same timestamp
+        timestamp: Math.max(...blockEvents.map(e => e.timestamp)),
         blockNumber: blockNumber,
         totalVotingPower: totalVotingPower.toString(),
         delegators: Object.fromEntries(

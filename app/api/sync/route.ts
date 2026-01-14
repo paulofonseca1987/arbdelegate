@@ -14,7 +14,7 @@ import {
   clearSyncProgress,
   normalizeAddress
 } from '@/lib/storage';
-import { getConfig, resolveEndBlock } from '@/lib/config';
+import { getConfig, resolveEndBlock, getDelegateStartBlock } from '@/lib/config';
 import type { Address } from 'viem';
 import type { VotingPowerData, TimelineEntry, DelegationEvent, MetadataSchema, CurrentStateSchema } from '@/lib/types';
 
@@ -99,7 +99,7 @@ async function processEvents(
       );
 
       timeline.push({
-        timestamp: blockEvents[0].timestamp, // All events in same block have same timestamp
+        timestamp: Math.max(...blockEvents.map(e => e.timestamp)),
         blockNumber: blockNumber,
         totalVotingPower: totalVotingPower.toString(),
         delegators: Object.fromEntries(
@@ -160,7 +160,8 @@ export async function POST(request: NextRequest) {
     const currentState = await getCurrentState(address);
 
     // Full sync from configured startBlock to endBlock (or current block if "latest")
-    const startBlock = BigInt(config.startBlock);
+    // Use per-delegate startBlock if available
+    const startBlock = BigInt(getDelegateStartBlock(address));
     const maxBlock = await resolveEndBlock(eventClient);
     const fromBlock = metadata
       ? BigInt(metadata.lastSyncedBlock + 1)

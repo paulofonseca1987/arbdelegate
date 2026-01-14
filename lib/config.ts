@@ -11,7 +11,7 @@ import {
   gnosis,
 } from 'viem/chains';
 import type { Chain, PublicClient } from 'viem';
-import type { Config } from './types';
+import type { Config, DelegateConfig } from './types';
 
 // Chain registry mapping names to viem chain objects
 const chainRegistry: Record<string, Chain> = {
@@ -97,6 +97,44 @@ export async function resolveEndBlock(client: PublicClient): Promise<bigint> {
 export function getStartBlock(): bigint {
   const config = getConfig();
   return BigInt(config.startBlock);
+}
+
+/**
+ * Get the start block for a specific delegate address
+ * Falls back to global startBlock if delegate not found in delegates array
+ */
+export function getDelegateStartBlock(address: string): number {
+  const config = getConfig();
+  const normalizedAddress = address.toLowerCase();
+
+  if (config.delegates) {
+    const delegate = config.delegates.find(
+      (d) => d.address.toLowerCase() === normalizedAddress
+    );
+    if (delegate) {
+      return delegate.startBlock;
+    }
+  }
+
+  // Fallback to global startBlock
+  return config.startBlock;
+}
+
+/**
+ * Get all configured delegates
+ */
+export function getDelegates(): DelegateConfig[] {
+  const config = getConfig();
+
+  if (config.delegates && config.delegates.length > 0) {
+    return config.delegates;
+  }
+
+  // Fallback: return single delegate from legacy config
+  return [{
+    address: config.delegateAddress,
+    startBlock: config.startBlock,
+  }];
 }
 
 /**

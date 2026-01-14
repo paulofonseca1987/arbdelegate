@@ -1,4 +1,12 @@
+export interface DelegateConfig {
+  address: string;
+  name?: string;
+  startBlock: number;
+}
+
 export interface Config {
+  delegates?: DelegateConfig[];
+  defaultDelegate?: string;
   delegateAddress: string;
   tokenAddress: string;
   chainId: number;

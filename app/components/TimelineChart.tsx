@@ -115,15 +115,13 @@ export default function TimelineChart({
       total: parseFloat(entry.totalVotingPower) / 1e18, // Convert from wei
     };
 
-    // Add each delegator's balance - explicitly set null for delegators that don't exist
-    // to prevent Recharts from drawing lines across undefined gaps
+    // Add each delegator's balance only if they exist in this entry
     delegatorAddresses.forEach((addr) => {
       if (entry.delegators[addr]) {
         const balance = entry.delegators[addr];
         dataPoint[addr] = parseFloat(balance) / 1e18;
-      } else {
-        dataPoint[addr] = null;
       }
+      // Don't add the property if the delegator doesn't exist in this entry
     });
 
     return dataPoint;
@@ -144,9 +142,11 @@ export default function TimelineChart({
         total: lastEntry.total,
         _hasChanges: false,
       };
-      // Copy all delegator values from last entry (including null values)
+      // Copy all delegator values from last entry
       delegatorAddresses.forEach((addr) => {
-        syntheticPoint[addr] = lastEntry[addr];
+        if (lastEntry[addr] !== undefined) {
+          syntheticPoint[addr] = lastEntry[addr];
+        }
       });
       chartData.push(syntheticPoint);
     }
@@ -202,8 +202,9 @@ export default function TimelineChart({
       };
     });
 
-  // Fixed Y-axis scale at 750k
-  const maxYAxis = 750000;
+  // Dynamic Y-axis scale: 10% higher than max cumulative voting power
+  const maxVotingPower = Math.max(...chartData.map(d => d.total || 0));
+  const maxYAxis = Math.ceil(maxVotingPower * 1.1 / 100000) * 100000; // Round up to nearest 100k
 
   // Generate ticks at 100k intervals
   const yAxisTicks: number[] = [];
@@ -424,23 +425,31 @@ export default function TimelineChart({
     return null;
   };
 
-  // Set date range: September 1st 2024 to the last synced timestamp
-  const startDate = new Date("2024-09-01").getTime() / 1000; // Unix timestamp
-  // endDate is defined earlier (for synthetic point)
+  // Set date range: first event to current day
+  const firstEventTimestamp = timeline.length > 0 ? timeline[0].timestamp : Math.floor(Date.now() / 1000);
+  const currentDate = Math.floor(Date.now() / 1000); // Current time
+  const domainEndDate = currentDate;
 
-  // Generate ticks for the 1st of each month up to the end date
-  const endDateObj = new Date(endDate * 1000);
+
+  // Generate ticks for the 1st of each month within the date range
+  const startDateObj = new Date(firstEventTimestamp * 1000);
+  const endDateObj = new Date(domainEndDate * 1000);
+  const startYear = startDateObj.getFullYear();
+  const startMonth = startDateObj.getMonth();
   const endYear = endDateObj.getFullYear();
   const endMonth = endDateObj.getMonth();
 
   const allMonthlyTicks: number[] = [];
-  for (let year = 2024; year <= endYear; year++) {
-    const loopStartMonth = year === 2024 ? 8 : 0; // September (8) for 2024, January (0) for others
-    const loopEndMonth = year === endYear ? endMonth : 11; // End month for final year, December (11) for others
+  for (let year = startYear; year <= endYear; year++) {
+    const loopStartMonth = year === startYear ? startMonth : 0;
+    const loopEndMonth = year === endYear ? endMonth : 11;
 
     for (let month = loopStartMonth; month <= loopEndMonth; month++) {
       const monthStart = new Date(year, month, 1).getTime() / 1000;
-      allMonthlyTicks.push(monthStart);
+      // Only include ticks within the domain range
+      if (monthStart >= firstEventTimestamp && monthStart <= domainEndDate) {
+        allMonthlyTicks.push(monthStart);
+      }
     }
   }
 
@@ -555,7 +564,7 @@ export default function TimelineChart({
             }
             type="number"
             scale="time"
-            domain={[startDate, endDate]}
+            domain={[firstEventTimestamp, domainEndDate]}
             ticks={monthlyTicks}
             tick={{ fontSize: 10, fill: isDark ? "#9ca3af" : "#4b5563" }}
             interval={0}
@@ -585,8 +594,6 @@ export default function TimelineChart({
               fill={`url(#color${addr})`}
               name={addr}
               hide={hiddenDelegates.has(addr)}
-              connectNulls={false}
-              isAnimationActive={false}
             />
           ))}
           {/* Vote markers */}
