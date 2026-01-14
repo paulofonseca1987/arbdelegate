@@ -1,0 +1,109 @@
+{
+  "partitionId": 0,
+  "entries": [
+    {
+      "timestamp": 1732594675,
+      "blockNumber": 278386315,
+      "totalVotingPower": "0",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0"
+      }
+    },
+    {
+      "timestamp": 1732734079,
+      "blockNumber": 278940043,
+      "totalVotingPower": "84723089400378150000001",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "84723089400378150000001"
+      }
+    },
+    {
+      "timestamp": 1732810198,
+      "blockNumber": 279242172,
+      "totalVotingPower": "81023089400378150000001",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001"
+      }
+    },
+    {
+      "timestamp": 1735443597,
+      "blockNumber": 289706808,
+      "totalVotingPower": "0",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0"
+      }
+    },
+    {
+      "timestamp": 1735702110,
+      "blockNumber": 290736776,
+      "totalVotingPower": "81023089400378150000001",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001"
+      }
+    },
+    {
+      "timestamp": 1736024046,
+      "blockNumber": 292016297,
+      "totalVotingPower": "88742969400378150000001",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "88742969400378150000001"
+      }
+    },
+    {
+      "timestamp": 1736028726,
+      "blockNumber": 292034807,
+      "totalVotingPower": "81023969400378150000001",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023969400378150000001"
+      }
+    },
+    {
+      "timestamp": 1736029084,
+      "blockNumber": 292036218,
+      "totalVotingPower": "81023969400378150000002",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023969400378150000002"
+      }
+    },
+    {
+      "timestamp": 1736733705,
+      "blockNumber": 294840288,
+      "totalVotingPower": "0",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0"
+      }
+    },
+    {
+      "timestamp": 1736733724,
+      "blockNumber": 294840365,
+      "totalVotingPower": "0",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0"
+      }
+    },
+    {
+      "timestamp": 1737476234,
+      "blockNumber": 297798602,
+      "totalVotingPower": "88872979400378150000002",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "88872979400378150000002"
+      }
+    },
+    {
+      "timestamp": 1738302745,
+      "blockNumber": 301084224,
+      "totalVotingPower": "51872979400378150000002",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "51872979400378150000002"
+      }
+    },
+    {
+      "timestamp": 1738303314,
+      "blockNumber": 301086442,
+      "totalVotingPower": "51872979400378150000003",
+      "delegators": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "51872979400378150000003"
+      }
+    }
+  ]
+}
