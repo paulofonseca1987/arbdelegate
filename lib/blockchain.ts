@@ -417,7 +417,9 @@ export async function fetchDelegationEvents(
           continue;
         }
 
-        const isDelegatingTo = log.args.toDelegate === delegateAddress;
+        // IMPORTANT: Compare addresses case-insensitively!
+        // log.args.toDelegate is checksummed, delegateAddress may be lowercase
+        const isDelegatingTo = log.args.toDelegate.toLowerCase() === delegateAddress.toLowerCase();
 
         events.push({
           from: isDelegatingTo ? delegator : delegateAddress,
