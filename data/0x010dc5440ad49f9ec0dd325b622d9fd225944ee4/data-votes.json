@@ -1,0 +1,2648 @@
+{
+  "votes": [
+    {
+      "proposalId": "0x66812a5c91fe5f590965148c76f1ca609fdc5ded722544673c275a3b2ed94549",
+      "source": "snapshot",
+      "votingPower": "81033402080938661432402",
+      "snapshotTimestamp": 1725461261,
+      "snapshotBlockNumber": 250029865,
+      "voteTimestamp": 1725769882,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/arbitrum-dao-procurement-committee-phase-ii-proposal/26441/37?u=0xdonpepe",
+      "proposalTitle": "ArbitrumDAO Procurement Committee Phase II",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "Yes - Extend",
+        "No - Do Not Extend",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001",
+        "0x6aad03b539bce6d92530677ab2f5b879856e3b01": "10926125938661432401"
+      }
+    },
+    {
+      "proposalId": "0xb761aeef86e9c7a12a7c7326f28cb10bd0d9d94a83041624dc5d03628c3f5c94",
+      "source": "snapshot",
+      "votingPower": "81033402080938661432402",
+      "snapshotTimestamp": 1725496154,
+      "snapshotBlockNumber": 250167488,
+      "voteTimestamp": 1725605893,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/rfc-pyth-network-arbitrum-ltipp-extension-request/26533/18?u=0xdonpepe",
+      "proposalTitle": "[Pyth Network] Arbitrum LTIPP Extension Request",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001",
+        "0x6aad03b539bce6d92530677ab2f5b879856e3b01": "10926125938661432401"
+      }
+    },
+    {
+      "proposalId": "0x22f9e560d0a4aac46cc1e49ea71858d531226d0750409acdbfd766fa9c5eb1cb",
+      "source": "snapshot",
+      "votingPower": "81033402080938661432402",
+      "snapshotTimestamp": 1725551820,
+      "snapshotBlockNumber": 250389128,
+      "voteTimestamp": 1725608254,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/enhancing-multichain-governance-upgrading-rari-governance-token-on-arbitrum/26096/17?u=0xdonpepe",
+      "proposalTitle": "Enhancing Multichain Governance: Upgrading RARI Governance Token on Arbitrum",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001",
+        "0x6aad03b539bce6d92530677ab2f5b879856e3b01": "10926125938661432401"
+      }
+    },
+    {
+      "proposalId": "0x9db0ec7f1e6dbdaaa472eaabad7c69fac93d4453e01ce04f1971a4cbd3655ba4",
+      "source": "snapshot",
+      "votingPower": "81033402080938661432402",
+      "snapshotTimestamp": 1725572393,
+      "snapshotBlockNumber": 250463461,
+      "voteTimestamp": 1725604952,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/rfc-synthetix-ltip-grant-extension-request/26524/12?u=0xdonpepe",
+      "proposalTitle": "Synthetix LTIP Grant Extension Request",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001",
+        "0x6aad03b539bce6d92530677ab2f5b879856e3b01": "10926125938661432401"
+      }
+    },
+    {
+      "proposalId": "0xbe03044e4eeddfe838b719cffe234aced53238da1cef7f3e5e8c2a86aadcccb6",
+      "source": "snapshot",
+      "votingPower": "81033402080938661432402",
+      "snapshotTimestamp": 1725592284,
+      "snapshotBlockNumber": 250549350,
+      "voteTimestamp": 1725604391,
+      "choice": 1,
+      "proposalTitle": "Fund the Stylus Sprint",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001",
+        "0x6aad03b539bce6d92530677ab2f5b879856e3b01": "10926125938661432401"
+      }
+    },
+    {
+      "proposalId": "0x785e8ed145d34ab4c9fea725cf0ce31267f90bc2ed4423e6e718c5e736e84c06",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1726097400,
+      "snapshotBlockNumber": 252556661,
+      "voteTimestamp": 1726506147,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/rfc-aave-dao-ltipp-grant-extension-request/26612/5?u=0xdonpepe",
+      "proposalTitle": "[Aave DAO] LTIPP Grant Extension Request",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0xffe9bb38228fdaf3d121140856fd2d51c2ca7f8e0d1021c07e791cebb541129a",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1726144393,
+      "snapshotBlockNumber": 252743759,
+      "voteTimestamp": 1726508091,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/constitutional-aip-proposal-to-adopt-timeboost-a-new-transaction-ordering-policy/25167/53?u=0xdonpepe",
+      "proposalTitle": "Constitutional AIP: Proposal to adopt Timeboost, a new transaction ordering policy ",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "Collect bids in ETH to treasury",
+        "Collect bids in ARB and burn",
+        "Decline to adopt Timeboost",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0xd05fe5e629072098183d454fb5084715a19d5b3285af2b87c3dad7b61d614954",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1726177009,
+      "snapshotBlockNumber": 252873424,
+      "voteTimestamp": 1726509359,
+      "choice": [
+        2,
+        1,
+        4,
+        3,
+        5
+      ],
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-terms-of-tenure-for-step-program-manager/26675/22?u=0xdonpepe",
+      "proposalTitle": "Terms of Tenure for STEP program manager",
+      "proposalType": "ranked-choice",
+      "proposalChoices": [
+        "6 months from available funds",
+        "Additional funds for one year ",
+        "Liquidation of RWAs and STEP",
+        "New election at $86,581 per year",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0x8f242363dbc69d640799b461b27ba7b957ab13af87389b699639ba335b8b5e91",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1726184821,
+      "snapshotBlockNumber": 252903863,
+      "voteTimestamp": 1726539004,
+      "choice": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        6
+      ],
+      "reason": "https://forum.arbitrum.foundation/t/arbitrumdao-off-site-directional-proposal/25660/64?u=0xdonpepe",
+      "proposalTitle": "ArbitrumDAO Off-site",
+      "proposalType": "ranked-choice",
+      "proposalChoices": [
+        "IRL/conference/scholarships",
+        "IRL/conference/no scholarships",
+        "IRL/separate/scholarships",
+        "IRL/separate/no scholarships",
+        "Online event",
+        "Drop idea and do nothing",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "112325874093084064493910714319140234408317576120604499542718372361020687891105",
+      "source": "onchain-core",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1726192379,
+      "snapshotBlockNumber": 252934344,
+      "voteTimestamp": 1726192379,
+      "voteBlockNumber": 254183173,
+      "choice": 0,
+      "reason": "This proposal was withdrawn by its creator.",
+      "proposalTitle": "Upgrade Governor Contracts by Transfering Timelock Roles to the New Governors",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0x41bc78325225705741c2eaebd9352bde74c2b28867e1a7321ccab0fa8fd5c2b7",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1726672604,
+      "snapshotBlockNumber": 254837206,
+      "voteTimestamp": 1726804287,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/govhack-devcon-in-bangkok-hack-humanity/26634/45?u=0xdonpepe",
+      "proposalTitle": "GovHack Devcon in Bangkok - Hack Humanity",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0x852b7e7bc83db6c3628695816647bdeb9825d10e445a71dcc94e651b2f8a71b9",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1726748980,
+      "snapshotBlockNumber": 255139955,
+      "voteTimestamp": 1726789721,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-funds-to-bolster-foundation-s-strategic-partnerships-budget/26775/20?u=0xdonpepe",
+      "proposalTitle": "[Non-Constitutional] Funds to Bolster Foundation’s Strategic Partnerships Budget",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0x1326cb522a74b29fb12d52bb302b245180c2b8f6e1fe8f295c4447bd96a5bacd",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1726783196,
+      "snapshotBlockNumber": 255275216,
+      "voteTimestamp": 1726790379,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/proposal-delegate-incentive-program-dip/26496/79?u=0xdonpepe",
+      "proposalTitle": "[Non-Constitutional] Arbitrum DAO Delegate Incentive Program",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "FOR - DIP V1.5",
+        "FOR - DIP V1.1",
+        "ABSTAIN",
+        "AGAINST"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "104013508427929791254647754028304659752687979030673391997226897145800989991969",
+      "source": "onchain-treasury",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1726806275,
+      "snapshotBlockNumber": 255367435,
+      "voteTimestamp": 1726806275,
+      "voteBlockNumber": 255602892,
+      "choice": 0,
+      "reason": "N/A",
+      "proposalTitle": "Ethereum Protocol Attackathon Sponsorship",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0xaa831b9306c3ec4f4a9b9731e7c445e540e5a24461a79f1166cb8dcdfa692d09",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1727320097,
+      "snapshotBlockNumber": 257409990,
+      "voteTimestamp": 1727477109,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/aip-whitelist-infura-nova-validator/25083/16?u=0xdonpepe",
+      "proposalTitle": "[Non-Constitutional] Whitelist Infura Nova Validator",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "Whitelist Infura Validator",
+        "Don't whitelist Infura Validator",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "93496910583545921039254255671954964968329693484106479494661805749408858477569",
+      "source": "onchain-treasury",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1727365415,
+      "snapshotBlockNumber": 257592992,
+      "voteTimestamp": 1727365415,
+      "voteBlockNumber": 258034443,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/arbitrum-dao-procurement-committee-phase-ii-proposal/26441/75?u=0xdonpepe",
+      "proposalTitle": "[NON-CONSTITUTIONAL] Arbitrum DAO Procurement Committee: Phase II Proposal",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0x23985f3bb58758f0f43c5248085f6b7f1783c8e205604262336d043558aeca0c",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1727389153,
+      "snapshotBlockNumber": 257687411,
+      "voteTimestamp": 1727477272,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/research-on-context-and-retention/26807/29?u=0xdonpepe",
+      "proposalTitle": "Research on context and retention",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0x7232f2c1d1da127cb65ee6036fc52ed6fc02540aaf6cf79a3045b6031e819a35",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1727389660,
+      "snapshotBlockNumber": 257689218,
+      "voteTimestamp": 1727815429,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/team-6-an-eip-4824-powered-daouri-for-the-arbitrum-dao/25371/54?u=0xdonpepe",
+      "proposalTitle": "An EIP-4824 powered daoURI for Arbitrum DAO",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "For – Use ENS txt records",
+        "For – Use registration contract",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "27888300053486667232765715922683646778055572080881341292116987136155397805421",
+      "source": "onchain-core",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1727407355,
+      "snapshotBlockNumber": 257759838,
+      "voteTimestamp": 1727407355,
+      "voteBlockNumber": 258033058,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/constitutional-extend-delay-on-l2time-lock/26470/9?u=0xdonpepe",
+      "proposalTitle": "Constitutional AIP - Extend Delay on L2Time Lock",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "70429238801539452185774644949439873171403711884919863798646613157877144482819",
+      "source": "onchain-treasury",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1727407415,
+      "snapshotBlockNumber": 257760077,
+      "voteTimestamp": 1727407415,
+      "voteBlockNumber": 258035615,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/ethereum-protocol-attackathon-sponsorship/26122/65?u=0xdonpepe",
+      "proposalTitle": "UPDATED - Ethereum Protocol Attackathon Sponsorship",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "78608365328815179822381240433375943106975722017227920505592824878237374730465",
+      "source": "onchain-treasury",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1727974895,
+      "snapshotBlockNumber": 260015240,
+      "voteTimestamp": 1727974895,
+      "voteBlockNumber": 262454019,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-funds-to-bolster-foundation-s-strategic-partnerships-budget/26775/93?u=0xdonpepe",
+      "proposalTitle": "[Non-Constitutional] Funds to Bolster Foundation’s Strategic Partnerships Budget",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "96690486288059875871645030622562174419564010435288438848687174619767247452877",
+      "source": "onchain-treasury",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1728064499,
+      "snapshotBlockNumber": 260371789,
+      "voteTimestamp": 1728064499,
+      "voteBlockNumber": 261516868,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/arbitrumdao-off-site-directional-proposal/25660/78?u=0xdonpepe",
+      "proposalTitle": "ArbitrumDAO strategic “Off-site” (online) updated proposal",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "56768509231150680433760428191516666361790213029100482092064768634784370622764",
+      "source": "onchain-core",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1728064883,
+      "snapshotBlockNumber": 260373311,
+      "voteTimestamp": 1728064883,
+      "voteBlockNumber": 260451833,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/enhancing-multichain-governance-upgrading-rari-governance-token-on-arbitrum/26096/50?u=0xdonpepe",
+      "proposalTitle": "Enhancing Multichain Governance: Upgrading RARI Governance Token on Arbitrum",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "7979895167029508946638584765496434407327098393519089113101189960001594458109",
+      "source": "onchain-treasury",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1728581987,
+      "snapshotBlockNumber": 262423546,
+      "voteTimestamp": 1728581987,
+      "voteBlockNumber": 262802108,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/proposal-delegate-incentive-program-dip/26496/126?u=0xdonpepe",
+      "proposalTitle": "[Non-Constitutional] Arbitrum DAO Delegate Incentive Program",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "24926593791565028016457688578136747185250074804329950986605484216603582190563",
+      "source": "onchain-treasury",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1728584279,
+      "snapshotBlockNumber": 262432634,
+      "voteTimestamp": 1728584279,
+      "voteBlockNumber": 262869044,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/rfc-fund-the-stylus-sprint/26437/57?u=0xdonpepe",
+      "proposalTitle": "Fund the Stylus Sprint",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0x817ca6edf6d7e5c9fd5c9839cdd266c600054a443169fdb577bc7567f70073f0",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1728591735,
+      "snapshotBlockNumber": 262462036,
+      "voteTimestamp": 1728787561,
+      "choice": [
+        7
+      ],
+      "reason": "https://forum.arbitrum.foundation/t/ltipp-retroactive-community-funding/26903/25?u=0xdonpepe",
+      "proposalTitle": "LTIPP Retroactive Community Funding Selections",
+      "proposalType": "approval",
+      "proposalChoices": [
+        "Powerhouse",
+        "cp0x",
+        "Lampros Labs DAO",
+        "Origin Protocol",
+        "Tokenguard",
+        "Serious People",
+        "Do not fund",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0xdfe7bf7e5bc227fc06765f37d9d9ecd1371e637b93b574ae4cc4c1d345cd648f",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1728599991,
+      "snapshotBlockNumber": 262494680,
+      "voteTimestamp": 1728788191,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/establishing-a-dao-events-budget-for-2025/26734/30?u=0xdonpepe",
+      "proposalTitle": "Establishing a DAO Events Budget for 2025",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0xc9fc6b61c7e13a4645937937600397e496a3f4703a8f4d00e11c0f641d86ce9f",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1729166400,
+      "snapshotBlockNumber": 264746400,
+      "voteTimestamp": 1729373464,
+      "choice": {
+        "1": 1
+      },
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-arbitrum-research-and-development-collective-term-2/26922/44?u=0xdonpepe",
+      "proposalTitle": "(V2) Arbitrum Research & Development Collective",
+      "proposalType": "weighted",
+      "proposalChoices": [
+        "Funded with 1.73M USDC + Council",
+        "Funded with 2.09M USDC + Council",
+        "Funded with 2.60M USDC + Council",
+        "Abstain",
+        "Do not fund the ARDC"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0xe41fa9b0999dbd9276f7e4474e575883717020128b80dc6bd27b75ba5bd6420c",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1729183326,
+      "snapshotBlockNumber": 264814680,
+      "voteTimestamp": 1729372191,
+      "choice": 2,
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-arbitrum-token-swap-pilot-program/27106/41?u=0xdonpepe",
+      "proposalTitle": "[Non-Constitutional] Arbitrum Token Swap Pilot Program",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0x7434c3c10da39c52503edf0080337b7fad3f7e33e87dac952f7bfa7c111e99ba",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1729223288,
+      "snapshotBlockNumber": 264973442,
+      "voteTimestamp": 1729639100,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/reconfirmation-of-gcp-council-appointees/27142/33?u=0xdonpepe",
+      "proposalTitle": "GCP Council Re-Confirmation Vote for Tim Chang",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "Reconfirm Tim Chang to GCPC",
+        "Don't confirm Tim Chang to GCPC",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0x63dd46900098540b321d48dc1bdcc09cc8cb7cb0dcc85ceb81dceac812b86e06",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1729223570,
+      "snapshotBlockNumber": 264974708,
+      "voteTimestamp": 1729639081,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/reconfirmation-of-gcp-council-appointees/27142/33?u=0xdonpepe",
+      "proposalTitle": "GCP Council Re-Confirmation Vote for John Kennedy",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "Reconfirm John Kennedy to GCPC",
+        "Don't confirm John Kennedy",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "83546392681388778220788629004310255202561156229718364611160970131196959784333",
+      "source": "onchain-treasury",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1730410907,
+      "snapshotBlockNumber": 269700585,
+      "voteTimestamp": 1730410907,
+      "voteBlockNumber": 273121559,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/establishing-a-dao-events-budget-for-2025/26734/82?u=0xdonpepe",
+      "proposalTitle": "Establishing a DAO Events Budget for 2025",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "36792157050667056852025000136263368859227883753318633087194112219909798752014",
+      "source": "onchain-treasury",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1730414195,
+      "snapshotBlockNumber": 269713653,
+      "voteTimestamp": 1730414195,
+      "voteBlockNumber": 273120820,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-arbitrum-research-and-development-collective-term-2/26922/91?u=0xdonpepe",
+      "proposalTitle": "(V2) Arbitrum Research & Development Collective",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0x2e701a942a8ed6f9ec8302cea866ab08648eeef0d07170814e3a3c3eb4e48415",
+      "source": "snapshot",
+      "votingPower": "81022475955000000000001",
+      "snapshotTimestamp": 1730415393,
+      "snapshotBlockNumber": 269718307,
+      "voteTimestamp": 1730687588,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-arbitrum-dao-delegate-code-of-conduct-formalizing-the-daos-operations/27188/45?u=0xdo",
+      "proposalTitle": "Adopt a Delegate Code of Conduct & Formalize Operations",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
+      }
+    },
+    {
+      "proposalId": "0x6065f661e3f2a5673284d3d5801dfa0126218c1840215426b576effc19fcc107",
+      "source": "snapshot",
+      "votingPower": "81023089400378150000001",
+      "snapshotTimestamp": 1731623111,
+      "snapshotBlockNumber": 274520639,
+      "voteTimestamp": 1731700149,
+      "choice": 2,
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-treasury-management-v1-2/26967/45?u=0xdonpepe",
+      "proposalTitle": "[Non-Constitutional] Treasury Management v1.2 ",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001"
+      }
+    },
+    {
+      "proposalId": "0x76ebc8056e283411cfed5cefad171e245b56fe3bc3d36d702244aab3faae689c",
+      "source": "snapshot",
+      "votingPower": "81023089400378150000001",
+      "snapshotTimestamp": 1732046434,
+      "snapshotBlockNumber": 276205514,
+      "voteTimestamp": 1732392661,
+      "choice": 2,
+      "reason": "https://forum.arbitrum.foundation/t/proposal-for-financial-restitution-for-arbitrumdao-grant-winners/27020/80?u=0xdonpepe",
+      "proposalTitle": "Restitution For Extensively Delayed ArbitrumDAO Minigrant Winners",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001"
+      }
+    },
+    {
+      "proposalId": "0xf922eb584e616475100222fba40b0d6574ffc113bbb5b92b76e40bb2a91e45dc",
+      "source": "snapshot",
+      "votingPower": "81023089400378150000001",
+      "snapshotTimestamp": 1732319687,
+      "snapshotBlockNumber": 277292669,
+      "voteTimestamp": 1732393181,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/hackathon-continuation-program/27492/40?u=0xdonpepe",
+      "proposalTitle": "Hackathon Continuation Program",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "In favour, yes onchain mechanism",
+        "In favour, no onchain mechanism",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001"
+      }
+    },
+    {
+      "proposalId": "0x107fc8aecc6054725266830cd9097b7ff71f632c708c5ca39e58c5be88f46f14",
+      "source": "snapshot",
+      "votingPower": "139250613400378150000001",
+      "snapshotTimestamp": 1732848807,
+      "snapshotBlockNumber": 279393868,
+      "voteTimestamp": 1733271550,
+      "choice": 2,
+      "reason": "https://forum.arbitrum.foundation/t/non-consitutional-user-research-why-do-people-even-build-on-arbitrum-anyway/27608/63?u=0xdonpepe",
+      "proposalTitle": "[Non-consitutional] User Research: Why build on Arbitrum?",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "Researching within Arbitrum only",
+        "Arbitrum + 2 others (SOL + OP)",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "58227524000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x6f6ad0d74853f8d37a53bbb49c9747072b5e21d885391f5d2d4c41663dca516c",
+      "source": "snapshot",
+      "votingPower": "139250613400378150000001",
+      "snapshotTimestamp": 1732905500,
+      "snapshotBlockNumber": 279620105,
+      "voteTimestamp": 1733271914,
+      "choice": 4,
+      "reason": "https://forum.arbitrum.foundation/t/designing-and-operating-the-reporting-and-information-function/27609/34?u=0xdonpepe",
+      "proposalTitle": "Designing and operating the reporting and information function",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "For, More Salary - no bonusa",
+        "For: Less Salary - more bonus",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "58227524000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x052d7e9872192f46bfb4e0a2aabd07035d0842811ca1c82d654307b5d96e2e25",
+      "source": "snapshot",
+      "votingPower": "139250613400378150000001",
+      "snapshotTimestamp": 1733320247,
+      "snapshotBlockNumber": 281268833,
+      "voteTimestamp": 1733434186,
+      "choice": 2,
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-rfc-arbitrum-d-a-o-domain-allocator-offerings-grant-program-season-3/27584/58?u=0xdon",
+      "proposalTitle": "Arbitrum D.A.O. Domain Allocator Offerings) Grant Program  - Season 3",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "Renew with 4 domains",
+        "Renew with 5 domains (adding Orb",
+        "Abstain",
+        "Against"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "58227524000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xb5bbd23c20a480dc46f750112b6cc8f1d1825e40cdd0fc12f4ac3642b18f6740",
+      "source": "snapshot",
+      "votingPower": "139250613400378150000001",
+      "snapshotTimestamp": 1733330569,
+      "snapshotBlockNumber": 281310475,
+      "voteTimestamp": 1733434515,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-arbitrum-onboarding-v2-a-governance-bootcamp/27546/71?u=0xdonpepe",
+      "proposalTitle": "[NON-CONSTITUTIONAL] Arbitrum Onboarding V2: A Governance Bootcamp",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "For",
+        "Abstain",
+        "Against"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "58227524000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x86726ba9eb29df278cc5597290980f494329f524b0180759009a52ef11d4ca1f",
+      "source": "snapshot",
+      "votingPower": "139250613400378150000001",
+      "snapshotTimestamp": 1733414793,
+      "snapshotBlockNumber": 281647161,
+      "voteTimestamp": 1733433408,
+      "choice": {
+        "1": 2,
+        "2": 2000,
+        "4": 2
+      },
+      "proposalTitle": "ARDC (V2) Supervisory Council Election",
+      "proposalType": "weighted",
+      "proposalChoices": [
+        "Frisson (Comm Role)",
+        "JuanRah + AlexLumley (Comm Role)",
+        "Jameskbh (Comm Role)",
+        "Entropy Adv. + Tamara (Op Role) ",
+        "Pedro Breuer (Comm Role) ",
+        "Violet Benson (Comm Role) ",
+        "ZER8 (Comm Role) ",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "58227524000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xfbc7855075da7b93d7c95354e9b2adf848099562afcafa42fa7b7f6fa6e7804b",
+      "source": "snapshot",
+      "votingPower": "139250613400378150000001",
+      "snapshotTimestamp": 1733416593,
+      "snapshotBlockNumber": 281654280,
+      "voteTimestamp": 1733433909,
+      "choice": {
+        "6": 1
+      },
+      "proposalTitle": "ARDC (V2) Research Election",
+      "proposalType": "weighted",
+      "proposalChoices": [
+        "Revelo Intel",
+        "PYOR Research",
+        "The Block Research",
+        "Llama Research & Castle Capital",
+        "Blockworks Advisory",
+        "Messari",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "58227524000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x4959a33604c4fb590dc4326845bd011f7c202bcd6e43c2acc458548c644a567b",
+      "source": "snapshot",
+      "votingPower": "139250613400378150000001",
+      "snapshotTimestamp": 1733417277,
+      "snapshotBlockNumber": 281656670,
+      "voteTimestamp": 1733433573,
+      "choice": {
+        "5": 1
+      },
+      "proposalTitle": "ARDC (V2) Risk Election",
+      "proposalType": "weighted",
+      "proposalChoices": [
+        "Vending Machine",
+        "TAU Labs",
+        "Jupiter Block",
+        "DeFiSafety",
+        "Nethermind",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "58227524000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xc22debaecd252e2eccfa2b561345f091998d20740865ea6a39414f34fde52de2",
+      "source": "snapshot",
+      "votingPower": "139250613400378150000001",
+      "snapshotTimestamp": 1733418019,
+      "snapshotBlockNumber": 281659823,
+      "voteTimestamp": 1733433483,
+      "choice": {
+        "1": 1
+      },
+      "proposalTitle": "ARDC (V2) Security Election",
+      "proposalType": "weighted",
+      "proposalChoices": [
+        "OpenZeppelin",
+        "Trail of Bits",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "58227524000000000000000"
+      }
+    },
+    {
+      "proposalId": "108658450973990931334575713480652794742647878863726354508911679874665321261959",
+      "source": "onchain-treasury",
+      "votingPower": "139250613400378150000001",
+      "snapshotTimestamp": 1733424563,
+      "snapshotBlockNumber": 281686192,
+      "voteTimestamp": 1733424563,
+      "voteBlockNumber": 281728198,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/hackathon-continuation-program/27492/93?u=0xdonpepe",
+      "proposalTitle": "Arbitrum Hackathon Builder Continuation Program",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "58227524000000000000000"
+      }
+    },
+    {
+      "proposalId": "111105159609719390908725919603971316574753860587890014819515615630412225940809",
+      "source": "onchain-treasury",
+      "votingPower": "139250613400378150000001",
+      "snapshotTimestamp": 1733462819,
+      "snapshotBlockNumber": 281838606,
+      "voteTimestamp": 1733462819,
+      "voteBlockNumber": 282067197,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-treasury-management-v1-2/26967/94?u=0xdonpepe",
+      "proposalTitle": "Treasury Management V1.2",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "58227524000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xf5fdce242b85134153397754d25a43a49611a3e8a1c73b2e11a67e864c56e022",
+      "source": "snapshot",
+      "votingPower": "213463613400378150000001",
+      "snapshotTimestamp": 1733959073,
+      "snapshotBlockNumber": 283805123,
+      "voteTimestamp": 1734220290,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/unifying-arbitrum-s-mission-vision-purpose-mvp/27275/49?u=0xdonpepe",
+      "proposalTitle": "Unifying Arbitrum’s Mission, Vision, Purpose (MVP)",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "132440524000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x04c5984e2e2b8270a793bfb1bbe35c2c8a360429e2e1a5e72a3917215c51144d",
+      "source": "snapshot",
+      "votingPower": "213463613400378150000001",
+      "snapshotTimestamp": 1734031370,
+      "snapshotBlockNumber": 284080421,
+      "voteTimestamp": 1734219954,
+      "choice": 2,
+      "reason": "https://forum.arbitrum.foundation/t/partner-with-eth-bucharest-2025-eastern-europe-s-leading-ethereum-conference-and-hackathon/27606/96?u=0xdonpepe",
+      "proposalTitle": "Partner with ETH Bucharest 2025",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "FOR, with POAP - $69,300",
+        "FOR, without POAP - $55,800",
+        "Abstain",
+        "Against"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "132440524000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x8298874cdf0e0a1849cc02eefd3bc7d94c6868c560774df963318a5edd39a53f",
+      "source": "snapshot",
+      "votingPower": "213463613400378150000001",
+      "snapshotTimestamp": 1734038868,
+      "snapshotBlockNumber": 284109105,
+      "voteTimestamp": 1734336840,
+      "choice": 2,
+      "reason": "https://forum.arbitrum.foundation/t/opco-a-dao-adjacent-entity-for-strategy-execution/27361/68?u=0xdonpepe",
+      "proposalTitle": "OpCo – A DAO-adjacent Entity for Strategy Execution",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023089400378150000001",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "132440524000000000000000"
+      }
+    },
+    {
+      "proposalId": "101924107818180443784046677916233531742645798596604549673138282938475874935972",
+      "source": "onchain-core",
+      "votingPower": "162641439878554648339003",
+      "snapshotTimestamp": 1736459459,
+      "snapshotBlockNumber": 293749598,
+      "voteTimestamp": 1736459459,
+      "voteBlockNumber": 294270119,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/aip-bold-permissionless-validation-for-arbitrum/23232/82?u=0xdonpepe",
+      "proposalTitle": "[Constitutional AIP] Activate Arbitrum BoLD + Infura Nova Validator Whitelist",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023969400378150000002",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "81440524000000000000001",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "0xcbf1ea37e0665a44f7b880736333984d3e0672e93231df5ab0d2a8a5b844a73d",
+      "source": "snapshot",
+      "votingPower": "162641439878554648339003",
+      "snapshotTimestamp": 1736460606,
+      "snapshotBlockNumber": 293754144,
+      "voteTimestamp": 1736806764,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-stable-treasury-endowment-program-2-0/26819/49?u=0xdonpepe",
+      "proposalTitle": "Non-Constitutional: Stable Treasury Endowment Program 2.0",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023969400378150000002",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "81440524000000000000001",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "0x3defa5cd5570092ed229d56a5a5fc77c7f7de30eb92c8f21834a53c103936f8f",
+      "source": "snapshot",
+      "votingPower": "162641439878554648339003",
+      "snapshotTimestamp": 1736952767,
+      "snapshotBlockNumber": 295713240,
+      "voteTimestamp": 1737154244,
+      "choice": {
+        "1": 1
+      },
+      "proposalTitle": "Arbitrum D.A.O. Season 3 Elections - New Protocols and Ideas",
+      "proposalType": "weighted",
+      "proposalChoices": [
+        "Gabriel",
+        "Saurabh",
+        "Euphoria",
+        "TodayInDeFi",
+        "CastleCapital",
+        "Uhthred",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023969400378150000002",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "81440524000000000000001",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "0x0ce496fc0e16be46842dff38be15b831cde3099b7ce1e90ee3c941f5adb6aaee",
+      "source": "snapshot",
+      "votingPower": "162641439878554648339003",
+      "snapshotTimestamp": 1736952923,
+      "snapshotBlockNumber": 295713856,
+      "voteTimestamp": 1737410502,
+      "choice": {
+        "1": 1
+      },
+      "proposalTitle": "Arbitrum D.A.O. Season 3 Elections - Education, Community Growth, and Events",
+      "proposalType": "weighted",
+      "proposalChoices": [
+        "SEEDGov",
+        "FruteroClub",
+        "saas",
+        "ArbitrumHub.io",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023969400378150000002",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "81440524000000000000001",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "0x7241843c0a1ab87a5703335f28bb34ba190e31a9c294fc4d977116eaeb25f1db",
+      "source": "snapshot",
+      "votingPower": "162641439878554648339003",
+      "snapshotTimestamp": 1736953078,
+      "snapshotBlockNumber": 295714483,
+      "voteTimestamp": 1737154306,
+      "choice": {
+        "1": 1,
+        "2": 1
+      },
+      "proposalTitle": "Arbitrum D.A.O. Season 3 Elections - Dev Tooling on One and Stylus",
+      "proposalType": "weighted",
+      "proposalChoices": [
+        "Juandi",
+        "ariutokintumi",
+        "andreiv",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023969400378150000002",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "81440524000000000000001",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "0xe52ab17d41249186c4dc54afdb481e120572102ad222d4e2af13a92791d72344",
+      "source": "snapshot",
+      "votingPower": "162641439878554648339003",
+      "snapshotTimestamp": 1736953167,
+      "snapshotBlockNumber": 295714831,
+      "voteTimestamp": 1737154203,
+      "choice": {
+        "2": 1
+      },
+      "proposalTitle": "Arbitrum D.A.O. Season 3 Elections - Gaming",
+      "proposalType": "weighted",
+      "proposalChoices": [
+        "Flook",
+        "Erezedor",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023969400378150000002",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "81440524000000000000001",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "0x2bc8e69eb65f3b2127072242ca317f51578db014019e22e8b370254e0566a4cf",
+      "source": "snapshot",
+      "votingPower": "162641439878554648339003",
+      "snapshotTimestamp": 1737069263,
+      "snapshotBlockNumber": 296176967,
+      "voteTimestamp": 1737410458,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/the-watchdog-arbitrum-daos-grant-misuse-bounty-program/27978/55?u=0xdonpepe",
+      "proposalTitle": "The Watchdog: Arbitrum DAO's Grant Misuse Bounty Program",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81023969400378150000002",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "81440524000000000000001",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "0x959fb55d9887a68d3df6647e55010692777cc40e5c9b131dfdb3eedb8970dc6a",
+      "source": "snapshot",
+      "votingPower": "170490449878554648339003",
+      "snapshotTimestamp": 1737626268,
+      "snapshotBlockNumber": 298396849,
+      "voteTimestamp": 1738094897,
+      "choice": 4,
+      "proposalTitle": "Proposal for Piloting Enhancements and Strengthening the Sustainability of ArbitrumHub in the Year Ahead",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "For with retroactive",
+        "For without retroactive",
+        "Abstain",
+        "Against"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "88872979400378150000002",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "81440524000000000000001",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "0x6baef084d47cb0e0f5788449e0d6fafd6312a69f65b550d62d5b6772297b8695",
+      "source": "snapshot",
+      "votingPower": "170490449878554648339003",
+      "snapshotTimestamp": 1737677189,
+      "snapshotBlockNumber": 298602250,
+      "voteTimestamp": 1738099937,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/arbitrum-strategic-objective-setting-sos-defining-the-dao-s-interim-goals/28102/52?u=0xdonpepe",
+      "proposalTitle": "Arbitrum Strategic Objective Setting (SOS) – Defining the DAO’s Interim Goals",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "88872979400378150000002",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "81440524000000000000001",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "41351298371775353090222506531903916823291804644712693824312064183457809617851",
+      "source": "onchain-treasury",
+      "votingPower": "170490449878554648339003",
+      "snapshotTimestamp": 1738259171,
+      "snapshotBlockNumber": 300914060,
+      "voteTimestamp": 1738259171,
+      "voteBlockNumber": 304055687,
+      "choice": 0,
+      "reason": "https://forum.arbitrum.foundation/t/opco-a-dao-adjacent-entity-for-strategy-execution/27361/146?u=0xdonpepe",
+      "proposalTitle": "OpCo: A DAO-adjacent Entity for Strategy Execution",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "88872979400378150000002",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "81440524000000000000001",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "13323456481927947871314500108227684550647495448005726995657704713229313956489",
+      "source": "onchain-treasury",
+      "votingPower": "170490449878554648339003",
+      "snapshotTimestamp": 1738282211,
+      "snapshotBlockNumber": 301004088,
+      "voteTimestamp": 1738282211,
+      "voteBlockNumber": 305394517,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-stable-treasury-endowment-program-2-0/26819/119?u=0xdonpepe",
+      "proposalTitle": "Non-Constitutional: Stable Treasury Endowment Program 2.0",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "88872979400378150000002",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "81440524000000000000001",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "0xbd77b4faf99e06c7b4117e5dafaf5bb8f873bcffbb5c9d414a7ff745b6849f3a",
+      "source": "snapshot",
+      "votingPower": "170490449878554648339003",
+      "snapshotTimestamp": 1738298051,
+      "snapshotBlockNumber": 301065864,
+      "voteTimestamp": 1738564845,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/aip-timeboost-nova-fee-sweep/28247/17?u=0xdonpepe",
+      "proposalTitle": "Approve the Nova Fee Sweep Action",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "88872979400378150000002",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "81440524000000000000001",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "47215139570733026393508270943324710379923699871435188004224569883226292800465",
+      "source": "onchain-treasury",
+      "votingPower": "103490449878554648339005",
+      "snapshotTimestamp": 1738858175,
+      "snapshotBlockNumber": 303284922,
+      "voteTimestamp": 1738858175,
+      "voteBlockNumber": 304058291,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/non-constitutional-rfc-arbitrum-d-a-o-domain-allocator-offerings-grant-program-season-3/27584/123?u=0xdonpepe",
+      "proposalTitle": "Arbitrum D.A.O. (Domain Allocator Offerings) Grant Program - Season 3",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "51872979400378150000003",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "51440524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "0x45513bb63946582432afa7213bcb2677e877dabbd5722210efd5eaf45797031c",
+      "source": "snapshot",
+      "votingPower": "103490449878554648339005",
+      "snapshotTimestamp": 1738868146,
+      "snapshotBlockNumber": 303324753,
+      "voteTimestamp": 1739051741,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/request-to-increase-the-stylus-sprint-committee-s-budget/28312/39?u=0xdonpepe",
+      "proposalTitle": "Request to Increase the Stylus Sprint Committee's Budget",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "51872979400378150000003",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "51440524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000"
+      }
+    },
+    {
+      "proposalId": "0xab1a7ff1a294882315f3beaa77fa0d4b2ec68633792046b941714108209ce737",
+      "source": "snapshot",
+      "votingPower": "318490453548049682057245",
+      "snapshotTimestamp": 1739485417,
+      "snapshotBlockNumber": 305772437,
+      "voteTimestamp": 1739934035,
+      "choice": 1,
+      "proposalTitle": "Arbitrum Growth Circles Event Proposal",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000003",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "27831845498978337986467036886891836384283300266814708262424272663046958396151",
+      "source": "onchain-treasury",
+      "votingPower": "318490453548049682057245",
+      "snapshotTimestamp": 1740064139,
+      "snapshotBlockNumber": 308071482,
+      "voteTimestamp": 1740064139,
+      "voteBlockNumber": 308497902,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "Request to Increase the Stylus Sprint Committee’s Budget",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000003",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "0x7cc26491a070c74c1a4ec5a9892571d31eb690015936a35b52c0d3a97bd5497f",
+      "source": "snapshot",
+      "votingPower": "318490453548049682057245",
+      "snapshotTimestamp": 1740088685,
+      "snapshotBlockNumber": 308169343,
+      "voteTimestamp": 1740171108,
+      "choice": 1,
+      "proposalTitle": "[CONSTITUTIONAL] AIP: ArbOS Version 40 Callisto",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000003",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "0xebbcad364ae7f02797b9cd7f30c668907d479d4bb5ba7f5d775849822297a01d",
+      "source": "snapshot",
+      "votingPower": "318490453548049682057245",
+      "snapshotTimestamp": 1740095930,
+      "snapshotBlockNumber": 308197943,
+      "voteTimestamp": 1740171413,
+      "choice": 2,
+      "proposalTitle": "Arbitrum Audit Program",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000003",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "0xc37793b67f39a6af9e9434003205b1d9b67dd6f75638329045257be823da4f18",
+      "source": "snapshot",
+      "votingPower": "318490453548049682057246",
+      "snapshotTimestamp": 1741300407,
+      "snapshotBlockNumber": 312987555,
+      "voteTimestamp": 1741553055,
+      "choice": [
+        2,
+        4,
+        5,
+        1,
+        3
+      ],
+      "reason": "N/A",
+      "proposalTitle": "TMC Recommendation",
+      "proposalType": "ranked-choice",
+      "proposalChoices": [
+        "#1 Deploy Both Strategies",
+        "#2 Only Deploy ARB Strategy",
+        "#3 Only Deploy Stable Strategy",
+        "#4 Deploy Nothing",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "14881197137069494959448952699217598923721993392617887469969318742509097999570",
+      "source": "onchain-core",
+      "votingPower": "318490453548049682057246",
+      "snapshotTimestamp": 1741901099,
+      "snapshotBlockNumber": 315383805,
+      "voteTimestamp": 1741901099,
+      "voteBlockNumber": 317036653,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[CONSTITUTIONAL] - Adopt Timeboost + Nova Fee Sweep",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "41764616447638715300612914863093416410063619332654034338488569044333128121381",
+      "source": "onchain-treasury",
+      "votingPower": "318490453548049682057246",
+      "snapshotTimestamp": 1741907135,
+      "snapshotBlockNumber": 315407692,
+      "voteTimestamp": 1741907135,
+      "voteBlockNumber": 317037052,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[NON-CONSTITUTIONAL] Arbitrum Onboarding V2: A Governance Bootcamp",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "107606727309922720763027677505427395647796047780305505879344344641224024948240",
+      "source": "onchain-treasury",
+      "votingPower": "318490453548049682057246",
+      "snapshotTimestamp": 1742485679,
+      "snapshotBlockNumber": 317712719,
+      "voteTimestamp": 1742485679,
+      "voteBlockNumber": 318925349,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[NON-CONSTITUTIONAL] Arbitrum Audit Program",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "0xf9fd09839ad10b0bb16c97a1cc4618270ed4145a38561da35ac4afe84516a107",
+      "source": "snapshot",
+      "votingPower": "318490453548049682057246",
+      "snapshotTimestamp": 1742493299,
+      "snapshotBlockNumber": 317743173,
+      "voteTimestamp": 1742790205,
+      "choice": 2,
+      "reason": "N/A",
+      "proposalTitle": "GMC's Preferred Allocations (7,500 ETH)",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "For, Deploy Capital",
+        "Against, Do not Deploy Capital",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "0xdb22a77942eddfea9c826790ac03c3e54a34716c0a9bde846399cffe6046d256",
+      "source": "snapshot",
+      "votingPower": "318490453548049682057246",
+      "snapshotTimestamp": 1742494122,
+      "snapshotBlockNumber": 317746456,
+      "voteTimestamp": 1742790164,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[CONSTITUTIONAL] Proposal: For Arbitrum DAO to register the Sky Custom Gateway contracts in the Router",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "0x7689f957c8cc37e991c7bed0f1d3dd3f6024a921b0bfbae5c897a09ab45c538b",
+      "source": "snapshot",
+      "votingPower": "318490453548049682057246",
+      "snapshotTimestamp": 1743103761,
+      "snapshotBlockNumber": 320177913,
+      "voteTimestamp": 1743527047,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[Non-constitutional] ARB Incentives: User Acquisition for dApps & Protocols",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "0xb422848b0f53f9077444b922d553618e331f9abe7539ae4566ff84364d0fbd3c",
+      "source": "snapshot",
+      "votingPower": "318490453548049682057246",
+      "snapshotTimestamp": 1743107191,
+      "snapshotBlockNumber": 320191624,
+      "voteTimestamp": 1743526977,
+      "choice": {
+        "8": 1
+      },
+      "proposalTitle": "OpCo – Oversight and Transparency Committee (OAT) Elections",
+      "proposalType": "weighted",
+      "proposalChoices": [
+        "A.J. Warner (ajwarner90)",
+        "Belmin Kalkan (0xRecruiter)",
+        "Chris Cameron (PaperImperium)",
+        "Edgar Prediger (EzR3aL)",
+        "Federico Daffina (Federico)",
+        "Frisson (Frisson)",
+        "Jana Bertram (Janabe)",
+        "Joseph Schiarizzi (cupojoseph)",
+        "Marc Zeller (MarcZeller)",
+        "Patrick McCorry (stonecoldpat)",
+        "Paul Imseih (Pablo)",
+        "Pedro Breuer (pedrob)"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "0xdd38e103e337b9e02a9d9ac73c2587db5be6cfb46506e13c0e897f7331895cf4",
+      "source": "snapshot",
+      "votingPower": "318490453548049682057246",
+      "snapshotTimestamp": 1743109894,
+      "snapshotBlockNumber": 320202405,
+      "voteTimestamp": 1743526922,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "TMC Stablecoin Recommendation",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "YES, Deploy Stablecoin Strategy",
+        "NO, Deploy Nothing",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "0x9d13c56f911796a578812959f775092b3644901be17738a2d41c516d8a8f2e9b",
+      "source": "snapshot",
+      "votingPower": "318490453548049682057246",
+      "snapshotTimestamp": 1743110479,
+      "snapshotBlockNumber": 320204758,
+      "voteTimestamp": 1743526901,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "TMC ARB Recommendation",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "YES, Deploy ARB Strategy",
+        "NO, Deploy Nothing",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345"
+      }
+    },
+    {
+      "proposalId": "0xd67d17db3bd230b163ce1f791d8712812446bced14ef2de875fd01ab3e2be3d6",
+      "source": "snapshot",
+      "votingPower": "318505453548049682057246",
+      "snapshotTimestamp": 1745940626,
+      "snapshotBlockNumber": 331482659,
+      "voteTimestamp": 1746120633,
+      "choice": 1,
+      "proposalTitle": "Approval of STEP 2 Committee's Preferred Allocations",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xbb7500b713ccf4eff3f2dcb61e3c9d8db5ed5628a4b2f891656a0c0de98907bd",
+      "source": "snapshot",
+      "votingPower": "318505453548049682057246",
+      "snapshotTimestamp": 1745942673,
+      "snapshotBlockNumber": 331490838,
+      "voteTimestamp": 1746120734,
+      "choice": 2,
+      "proposalTitle": "[Non-consitutional]: Top-up for Hackathon Continuation Program",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "Only top-up the HCP",
+        "Yes to both",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "28485587559812799913134094629469849411398475232393607771326861344548198896843",
+      "source": "onchain-treasury",
+      "votingPower": "318505453548049682057246",
+      "snapshotTimestamp": 1746745007,
+      "snapshotBlockNumber": 334684020,
+      "voteTimestamp": 1746745007,
+      "voteBlockNumber": 335143372,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "The Watchdog: Arbitrum DAO’s Grant Misuse Bounty Program",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "13108804573775967668959825241666341617107666532012387058509418598838035461528",
+      "source": "onchain-core",
+      "votingPower": "318505453548049682057246",
+      "snapshotTimestamp": 1747327631,
+      "snapshotBlockNumber": 336999512,
+      "voteTimestamp": 1747327631,
+      "voteBlockNumber": 337200315,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[CONSTITUTIONAL] AIP: ArbOS Version 40 Callisto",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x0b62de171fbff7a81833f9ebb44b9747189264d7a2cf95e3446223b1c413d2b0",
+      "source": "snapshot",
+      "votingPower": "318505453548049682057246",
+      "snapshotTimestamp": 1747346022,
+      "snapshotBlockNumber": 337072620,
+      "voteTimestamp": 1747378245,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "DeFi Renaissance Incentive Program (DRIP)",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "979400378150000004",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "151872001917792485926345",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x2d4089d72617eb137d6ee7ab9ae9efbe3cd1e0fcff48df24b926ce6259b734d3",
+      "source": "snapshot",
+      "votingPower": "529505477230343646343380",
+      "snapshotTimestamp": 1747922840,
+      "snapshotBlockNumber": 339367811,
+      "voteTimestamp": 1748389883,
+      "choice": 1,
+      "proposalTitle": "[Constitutional] AIP: Constitutional Quorum Threshold Reduction",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "12000000000000000000000",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "350873005000464600212483",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x9ea3f5ef5b6c838ffc24430bb927baa13bf25dcf5f444358e89f0958bb41a5e7",
+      "source": "snapshot",
+      "votingPower": "517505477230343646343380",
+      "snapshotTimestamp": 1748537446,
+      "snapshotBlockNumber": 341817424,
+      "voteTimestamp": 1748991638,
+      "choice": 2,
+      "reason": "N/A",
+      "proposalTitle": "Adjust the Voting Power of the Arbitrum Community Pool & Ratify the Agentic Governance Pivot",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "A - Do nothing",
+        "B - Reduce delegation to 100K",
+        "C - Reduce delegation to 0",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "350873005000464600212483",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x1de2707ab4cf792721544a8f82eee98535c16ce437ba2ac95a78c85c20b6d8b0",
+      "source": "snapshot",
+      "votingPower": "517505477230343646343380",
+      "snapshotTimestamp": 1748552631,
+      "snapshotBlockNumber": 341877679,
+      "voteTimestamp": 1748991758,
+      "choice": 2,
+      "reason": "Continue with the MS-13",
+      "proposalTitle": "Wind Down the MSS + Transfer Payment Responsibilities to the Arbitrum Foundation",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "For: Wind Down the MSS",
+        "Against: Continue with the MSS",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "350873005000464600212483",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "13050485773425645466153415888358064378805606653363056526521393182333458879398",
+      "source": "onchain-treasury",
+      "votingPower": "517505477230343646343380",
+      "snapshotTimestamp": 1749180191,
+      "snapshotBlockNumber": 344377154,
+      "voteTimestamp": 1749180191,
+      "voteBlockNumber": 345373446,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "DeFi Renaissance Incentive Program (DRIP)",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "350873005000464600212483",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x65b2b835f03bc18aa401b88702145e6b7686e8d7ddddfd956837251f8a7a7da1",
+      "source": "snapshot",
+      "votingPower": "517505477230343646343380",
+      "snapshotTimestamp": 1749739388,
+      "snapshotBlockNumber": 346604790,
+      "voteTimestamp": 1750191825,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "Updating the OpCo Foundation’s Operational Capability",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "350873005000464600212483",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x38663c36b26252acff6c6ca43663167858f51f960235dc0441bd2ad4a8f66fb1",
+      "source": "snapshot",
+      "votingPower": "517505477230343646343380",
+      "snapshotTimestamp": 1749761499,
+      "snapshotBlockNumber": 346692962,
+      "voteTimestamp": 1750191778,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "Let’s improve our governance forum with three proposals.app feature integrations",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "350873005000464600212483",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xfab795313df4ef1023c5f7f9027857637cc3841d62dc0b54796fbfa5f8096919",
+      "source": "snapshot",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1750341539,
+      "snapshotBlockNumber": 349004435,
+      "voteTimestamp": 1750874926,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "Arbitrum Treasury Management Council - Consolidating Efforts",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xeb044e3bdeba71e74dea02abeab4c33fe4bf5ab9def50082863702d5e2112b93",
+      "source": "snapshot",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1750347871,
+      "snapshotBlockNumber": 349029783,
+      "voteTimestamp": 1750874946,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[Constitutional] AIP: Remove Cost Cap on Arbitrum Nova",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "71020107401388505040510993373598301285550678565865201408741893567942851985019",
+      "source": "onchain-core",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1750373279,
+      "snapshotBlockNumber": 349130819,
+      "voteTimestamp": 1750373279,
+      "voteBlockNumber": 351135116,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[CONSTITUTIONAL] Register the Sky Custom Gateway contracts in the Router",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "94423886836435773843507976898262621297544156552971145658873213763398017341229",
+      "source": "onchain-core",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1750377647,
+      "snapshotBlockNumber": 349148252,
+      "voteTimestamp": 1750377647,
+      "voteBlockNumber": 351135242,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[Constitutional] AIP: Constitutional Quorum Threshold Reduction",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xd7529f75df21183d0eb9bce0cc828d56e9a100f449857c16177d98db6497cc16",
+      "source": "snapshot",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1751005712,
+      "snapshotBlockNumber": 351657480,
+      "voteTimestamp": 1751564366,
+      "choice": 3,
+      "reason": "N/A",
+      "proposalTitle": "Extend AGV Council Term and Align Future Elections with Operational Cadence",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x765b297702f21736e7b52c23d781dc76968519fef9c7b1ca1f924d167b2a6899",
+      "source": "snapshot",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1751627658,
+      "snapshotBlockNumber": 354140591,
+      "voteTimestamp": 1751917430,
+      "choice": {
+        "1": 1
+      },
+      "reason": "N/A",
+      "proposalTitle": "Arbitrum Research and Development Collective V2 - Extension",
+      "proposalType": "weighted",
+      "proposalChoices": [
+        "Extend ARDC V2",
+        "Extend w/ Re-Elections",
+        "Don't Extend",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x320cd2a99a0544184c06e1bd305aab1fc226ab0b498e077bc857a07045194f43",
+      "source": "snapshot",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1752080920,
+      "snapshotBlockNumber": 355947208,
+      "voteTimestamp": 1752512739,
+      "choice": 2,
+      "reason": "Too much money.",
+      "proposalTitle": "Entropy Advisors: Exclusively Working with the Arbitrum DAO, Year 2 and Year 3",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xc08147e229fa642ee7da2e5180f225122b8c517024902f21cdcd02b376179b8d",
+      "source": "snapshot",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1752175618,
+      "snapshotBlockNumber": 356326070,
+      "voteTimestamp": 1752512760,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[Constitutional] AIP: Update the Upgrade Executors",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x586de5bf366820c4369c041b0bbad2254d78fafe1dcc1528c1ed661bb4dfb671",
+      "source": "snapshot",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1752179470,
+      "snapshotBlockNumber": 356341477,
+      "voteTimestamp": 1752512778,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[CONSTITUTIONAL] Register $BORING in the Arbitrum generic-custom gateway",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xd3d164905fee7dfd8516db6150a97f7f91cf6f9377f614fa6a82333c4fb20546",
+      "source": "snapshot",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1752795788,
+      "snapshotBlockNumber": 358809105,
+      "voteTimestamp": 1752953049,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "Updating the Code of Conduct & DAO’s Procedures",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xd5a66f784523841511f7ffec4171b9c14404fdbf7c205086312084d19c95c193",
+      "source": "snapshot",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1753312860,
+      "snapshotBlockNumber": 360880355,
+      "voteTimestamp": 1753414420,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[Constitutional] AIP: Disable Legacy Tether Bridge",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x95a85f5d3d82215793ba9771ff06610d2ba9e2eaf58cdba904d7a9cb5b8bdc94",
+      "source": "snapshot",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1753373672,
+      "snapshotBlockNumber": 361124017,
+      "voteTimestamp": 1753414447,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "Consolidate Idle USDC to the ATMC’s Stablecoin Balance",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "37638751032596392177176596241110468090299645534448966767963399982622616318705",
+      "source": "onchain-treasury",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1753387331,
+      "snapshotBlockNumber": 361178747,
+      "voteTimestamp": 1753387331,
+      "voteBlockNumber": 361287636,
+      "choice": 0,
+      "reason": "N/A",
+      "proposalTitle": "Entropy Advisors: Exclusively Working with the Arbitrum DAO, Y2-Y3",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x008f190725018c3db0e6464bf31d44f09a4d7773fd1486dff0c52c27b8aba289",
+      "source": "snapshot",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1753991670,
+      "snapshotBlockNumber": 363598966,
+      "voteTimestamp": 1754541737,
+      "choice": 3,
+      "proposalTitle": "[Non-Constitutional] - Updates to the DIP, The Complete 1.7 Version",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "For: Upgrade to v1.7",
+        "Against: Keep v1.6",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "97685288731263391833044854304895851471157040105038894699042975271050068874277",
+      "source": "onchain-core",
+      "votingPower": "217164103162837138250442",
+      "snapshotTimestamp": 1754000687,
+      "snapshotBlockNumber": 363635070,
+      "voteTimestamp": 1754000687,
+      "voteBlockNumber": 363954721,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[CONSTITUTIONAL] Register $BORING in the Arbitrum generic-custom gateway",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "0",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "51852039695020109312343918128899814224888993575448130385109956762385891284115",
+      "source": "onchain-core",
+      "votingPower": "521741477066541864465486",
+      "snapshotTimestamp": 1755812303,
+      "snapshotBlockNumber": 370889019,
+      "voteTimestamp": 1755812303,
+      "voteBlockNumber": 371313514,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[CONSTITUTIONAL] Remove Cost Cap, Update Executors, Disable Legacy USDT Bridge",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x33754da4006d0ef38666ec5d5e85fd0966a891a594ab9dc21f23beedea2d330b",
+      "source": "snapshot",
+      "votingPower": "521741477066541864465486",
+      "snapshotTimestamp": 1756403059,
+      "snapshotBlockNumber": 373255749,
+      "voteTimestamp": 1756580884,
+      "choice": 1,
+      "reason": "N/A",
+      "proposalTitle": "[CONSTITUTIONAL] AIP: ArbOS Version 50 Dia",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xb1a39a0b7543e03cbb7aca0213448f4fbed4cbf1157fcb1b2458540fb452bc73",
+      "source": "snapshot",
+      "votingPower": "521741477066541864465486",
+      "snapshotTimestamp": 1757023223,
+      "snapshotBlockNumber": 375739231,
+      "voteTimestamp": 1757266692,
+      "choice": [
+        2,
+        3,
+        1,
+        4
+      ],
+      "proposalTitle": "Revert the Delegate Incentive Program (DIP) to Version 1.5",
+      "proposalType": "ranked-choice",
+      "proposalChoices": [
+        "Sunset the DIP",
+        "Revert the DIP to v1.5",
+        "Keep the current version",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xb41324ddcc115d08149b192e0b8ae4cfad0ef39cecb5663ea63d8a460d2cb3cc",
+      "source": "snapshot",
+      "votingPower": "521741477066541864465486",
+      "snapshotTimestamp": 1757023883,
+      "snapshotBlockNumber": 375741873,
+      "voteTimestamp": 1757439470,
+      "choice": [
+        1
+      ],
+      "reason": "N/A",
+      "proposalTitle": "[CONSTITUTIONAL] AIP: Security Council Election Process Improvements",
+      "proposalType": "approval",
+      "proposalChoices": [
+        "Increase cohort duration",
+        "Reduce qualification threshold",
+        "Allow members to bypass Nominee",
+        "Allow candidates to rotate keys",
+        "Allow members to rotate keys",
+        "None"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x15d7bef4adb076e13fbbc0941543eb93cff9512e2c83ada0498ef1df290c67a5",
+      "source": "snapshot",
+      "votingPower": "521759762406886996965833",
+      "snapshotTimestamp": 1758822356,
+      "snapshotBlockNumber": 382940332,
+      "voteTimestamp": 1759368267,
+      "choice": 1,
+      "reason": "https://forum.arbitrum.foundation/t/transfer-8-500-eth-from-the-treasury-to-atmc-s-eth-treasury-strategies/29983/4?u=0xdonpepe",
+      "proposalTitle": "Transfer 8,500 ETH from the Treasury to ATMC’s ETH Treasury Strategies",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "18285340345132500347",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "176946478176498339000",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xc5f06144fa92aaff99e0e44482ab6f7a3f6486dfb6c854d16271399ffcf895e6",
+      "source": "snapshot",
+      "votingPower": "521564530588365366126486",
+      "snapshotTimestamp": 1760021312,
+      "snapshotBlockNumber": 387744004,
+      "voteTimestamp": 1760500065,
+      "choice": 1,
+      "reason": "FOR; it ain't the best solution, but it works for now.",
+      "proposalTitle": "[Constitutional] AIP: DVP Quorum",
+      "proposalType": "single-choice",
+      "proposalChoices": [
+        "For DVP Quorum",
+        "Against DVP Quorum",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "0",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xdfdf56e53e2a77968c2c124be9210a5f33cb2261cca00e1d6b04f8bb6dfa626d",
+      "source": "snapshot",
+      "votingPower": "521564530588365366126486",
+      "snapshotTimestamp": 1760616785,
+      "snapshotBlockNumber": 390130115,
+      "voteTimestamp": 1760897045,
+      "choice": 1,
+      "proposalTitle": "AGV Council Compensation Calibration: Benchmark for Future Council Terms",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "0",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xb9e775ba4f1fa8cdc8e45c342428c3dabff7f19ce7b8cc4bde7cc6c8e542d963",
+      "source": "snapshot",
+      "votingPower": "521564530588365366126486",
+      "snapshotTimestamp": 1760642711,
+      "snapshotBlockNumber": 390233909,
+      "voteTimestamp": 1761187234,
+      "choice": 3,
+      "proposalTitle": "[Temperature Check] Should we try a Delegate Incentive Program like the Arbitrum Triple Dip?",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "0",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "57495998481040869152703890521939307107269690440073097268210566577740258992963",
+      "source": "onchain-treasury",
+      "votingPower": "521564530588365366126486",
+      "snapshotTimestamp": 1760656235,
+      "snapshotBlockNumber": 390288011,
+      "voteTimestamp": 1760656235,
+      "voteBlockNumber": 391306231,
+      "choice": 1,
+      "proposalTitle": "Transfer 8,500 ETH from the Treasury to ATMC’s ETH Treasury Strategies",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "0",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x44dedacbdae958904427db9ee93065917f57f50b71b4e87a94a318de18df399b",
+      "source": "snapshot",
+      "votingPower": "527404530588365366126486",
+      "snapshotTimestamp": 1761236089,
+      "snapshotBlockNumber": 392608038,
+      "voteTimestamp": 1761249178,
+      "choice": 2,
+      "proposalTitle": "The DAO Incentive Program (DIP 2.0)",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "5840000000000000000000",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "0",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x23702e34d0ffdabe6e17315f81daaf4119a36d108326473a6e063a35da5ba281",
+      "source": "snapshot",
+      "votingPower": "521564530588365366126486",
+      "snapshotTimestamp": 1762426813,
+      "snapshotBlockNumber": 397377564,
+      "voteTimestamp": 1762886500,
+      "choice": 2,
+      "proposalTitle": "AGV Council Compensation Calibration: Startup-Phase Bonus for Current Council Members",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "0",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x2253b8cdf0d483adf4dd1e9c4a9f473184a51a0ee3e8e826371c203f376edbc6",
+      "source": "snapshot",
+      "votingPower": "521564530588365366126486",
+      "snapshotTimestamp": 1763639625,
+      "snapshotBlockNumber": 402232221,
+      "voteTimestamp": 1764142866,
+      "choice": 2,
+      "proposalTitle": "Tim Chang reconfirmation for AGV council",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "0",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x0a3a7b84c7c01cc0feb8a7fad662cbf1f5aeb1b089b205ce412e2bc01d99c504",
+      "source": "snapshot",
+      "votingPower": "521564530588365366126486",
+      "snapshotTimestamp": 1763639783,
+      "snapshotBlockNumber": 402232858,
+      "voteTimestamp": 1764142827,
+      "choice": 2,
+      "proposalTitle": "John Kennedy reconfirmation for AGV council",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "0",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "0",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0x12bad84219d04c54cd72231ad8fe883499e85c14762919a06aaa7a251d64b8da",
+      "source": "snapshot",
+      "votingPower": "521564928986221629834509",
+      "snapshotTimestamp": 1764262865,
+      "snapshotBlockNumber": 404725381,
+      "voteTimestamp": 1764645819,
+      "choice": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1
+      },
+      "proposalTitle": "AGV - 2026 Council Elections",
+      "proposalType": "weighted",
+      "proposalChoices": [
+        "Greg Canessa",
+        "JoJo",
+        "David Bolger",
+        "Chris Cameron",
+        "Tekr0x",
+        "Coinflipcanada"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "398397856263708023",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "0",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "0xa06500740b56c647f25bd3edba80bf05b00140afe99d6b0d27c0f1dc93287901",
+      "source": "snapshot",
+      "votingPower": "524816588986221629834509",
+      "snapshotTimestamp": 1764891056,
+      "snapshotBlockNumber": 407242379,
+      "voteTimestamp": 1765394173,
+      "choice": 3,
+      "proposalTitle": "Rewarding Active Delegates (RAD) Program",
+      "proposalType": "basic",
+      "proposalChoices": [
+        "For",
+        "Against",
+        "Abstain"
+      ],
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "3252058397856263708023",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "0",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    },
+    {
+      "proposalId": "53154361738756237993090798888616593723057470462495169047773178676976253908001",
+      "source": "onchain-core",
+      "votingPower": "524816588986221629834509",
+      "snapshotTimestamp": 1764892055,
+      "snapshotBlockNumber": 407246381,
+      "voteTimestamp": 1764892055,
+      "voteBlockNumber": 411017611,
+      "choice": 1,
+      "proposalTitle": "[Constitutional] AIP: Activate ArbOS 51 (Dia) and Gas Pricing Updates",
+      "delegatorBreakdown": {
+        "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "3252058397856263708023",
+        "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
+        "0x8aa27e90e139d5ab5704df69429341cbcb2d2464": "0",
+        "0x8fc3fa3d8050d1498a7e0fd1633d2890dc147ebd": "166440001751702547791895",
+        "0xbf5089914027cd79a0583f42bf87fc87d5d17241": "355109004836662818334589",
+        "0x41899fb815872e3b73003e048b3e678259702c22": "15000000000000000000"
+      }
+    }
+  ]
+}

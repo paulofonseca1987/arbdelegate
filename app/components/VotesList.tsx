@@ -267,7 +267,7 @@ export default function VotesList({ votes, tallyDaoName = 'arbitrum', snapshotSp
                 </div>
               </th>
               <th
-                className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 w-52 min-w-[13rem]"
                 onClick={() => handleSort('votingPower')}
               >
                 <div className="flex items-center">
