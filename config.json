@@ -1,7 +1,6 @@
 {
   "_comment_endBlock": "endBlock: Specific block number, or use 'latest' to sync to current block",
   "_comment_tallyDaoName": "tallyDaoName: DAO slug used in Tally URLs (e.g., 'arbitrum' for tally.xyz/gov/arbitrum/...)",
-
   "delegates": [
     {
       "address": "0xE594469fDe6AE29943a64f81d95c20F5F8eB2e04",
@@ -11,7 +10,7 @@
     {
       "address": "0x010DC5440ad49f9Ec0Dd325b622d9FD225944ee4",
       "name": "Delegate 2",
-      "startBlock": 273046857
+      "startBlock": 169644590
     }
   ],
   "defaultDelegate": "0xE594469fDe6AE29943a64f81d95c20F5F8eB2e04",
