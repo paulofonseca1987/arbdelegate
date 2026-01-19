@@ -382,7 +382,6 @@
       "voteBlockNumber": 258033058,
       "choice": 1,
       "reason": "https://forum.arbitrum.foundation/t/constitutional-extend-delay-on-l2time-lock/26470/9?u=0xdonpepe",
-      "proposalTitle": "Constitutional AIP - Extend Delay on L2Time Lock",
       "delegatorBreakdown": {
         "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "81022475955000000000001"
       }
@@ -2241,7 +2240,6 @@
       "voteBlockNumber": 363954721,
       "choice": 1,
       "reason": "N/A",
-      "proposalTitle": "[CONSTITUTIONAL] Register $BORING in the Arbitrum generic-custom gateway",
       "delegatorBreakdown": {
         "0x010dc5440ad49f9ec0dd325b622d9fd225944ee4": "50531630932958092119545",
         "0xc208aab6608dee484a4acbb5b08c2b336a0756c6": "524000000000000002",
